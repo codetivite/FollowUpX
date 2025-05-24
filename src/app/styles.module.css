@@ -1,0 +1,398 @@
+@media only screen and (min-width: 320px)  {
+  .LandingMain {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 40px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+  }
+
+    .main .logo {
+    width: 130px;
+    height: 130px;
+    justify-self: flex-start;
+  }
+
+  .main .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mainImg {
+    width: 295px;
+    height: 270px;
+    object-fit: cover;
+    /* margin-top: 20px; */
+  }
+
+  .mainText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .mainText h1 {
+    display: none;
+  }
+
+  .mainText h2 {
+    font-weight: 600;
+    color: #56397D;
+    font-size: 20px;
+  }
+
+  .mainText p:first-of-type {
+    color: #56397D;
+    font-size: 14px;
+    text-align: center;
+    width: 70%;
+    /* padding: 0px 50px; */
+  }
+
+  .mainText .genBtn,
+  .mainText p:nth-of-type(2) {
+    display: none;
+  }
+
+  .mainText .button, .button1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    height: 37px;
+    background-color: #56397D;
+    border-radius: 50px;
+    outline: 0;
+    border: 0;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "SF Compact Display-Medium", Helvetica;
+    transition: all 0.3s;
+    overflow: hidden;
+    box-shadow: 0 4px 4px 0 rgb(33, 33, 70);
+    cursor: pointer;
+
+  }
+
+  .button span,
+  .button1 span {
+    position: relative;
+    z-index: 50;
+  }
+
+  .button:hover span,
+  .button1:hover span {
+    color: #56397D;
+  }
+
+  .button::before,
+  .button::after {
+    content: "";
+    position: absolute;
+    transition: inherit;
+    transform: scale(0);
+    border-radius: 50%;
+    background-color: whitesmoke;
+  }
+
+    .button1::before,
+  .button1::after {
+    content: "";
+    position: absolute;
+    transition: inherit;
+    transform: scale(0);
+    border-radius: 50%;
+    background-color: whitesmoke;
+  }
+
+  .button1::before,
+  .button::before {
+    top: 0;
+    left: 0;
+    right: 50%;
+    bottom: 50%;
+  }
+
+    .button1::after,
+  .button::after {
+    bottom: 0;
+    right: 0;
+    top: 50%;
+    left: 50%;
+  }
+
+  .button:hover::before,
+  .button:hover::after {
+    transform: scale(3);
+  }
+
+    .button1:hover::before,
+  .button1:hover::after {
+    transform: scale(3);
+  }
+
+  .mainText p:last-of-type {
+    font-weight: 500;
+    color: #56397D;
+    text-align: center;
+  }
+
+  .landingQuote {
+    display: none;
+  }
+}
+
+/* screen responsiveness 768px */
+@media only screen and (min-width: 768px) {
+      .main .logo {
+        display: none;
+  }
+
+  .mainImg {
+    width: 400px;
+    height: 380px;
+  }
+
+
+  .mainText h2 {
+    font-weight: 600;
+    color: #56397D;
+    font-size: 32px;
+  }
+
+  .mainText p:first-of-type {
+    font-size: 16px;
+  }
+
+  .mainText p:last-of-type {
+    font-weight: 500;
+    color: #56397D;
+    text-align: center;
+  }
+
+    .mainText p:last-of-type .link1 {
+    font-weight: 600;
+
+  }
+}
+
+/* screen responsiveness 1024px */
+@media only screen and (min-width: 1024px)  {
+    .LandingMain {
+    padding: 40px 40px;
+  }
+  
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .mainImg {
+    width: 400px;
+    height: 379px;
+    order: 2;
+  }
+
+    .mainText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+    .mainText h1 {
+    display: block;
+    font-size: 48px;
+    color: #56397D;
+    /* line-height: 100%; */
+    font-weight: 700;
+    letter-spacing: 0;
+    Width: 458px;
+    Height: 140px;
+  }
+
+  .mainText h2 {
+    display: none ;
+  }
+
+    .mainText p:nth-of-type(2),
+  .mainText p:first-of-type {
+        display: block;
+    width: 329px;
+    color: #56397D;
+    font-size: 18px;
+    text-align: left;
+        font-family: "SF Compact Display-Medium", Helvetica;
+    /* padding: 0px 50px; */
+  }
+
+
+      .mainText .genBtn {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+
+        .mainText .button, .button1 {
+
+    width: 140px;
+    height: 37px;
+
+  }
+
+  .mainText .button1 {
+    display: none;
+  }
+
+  .mainText p:last-of-type {
+    display: none;
+  }
+
+  .landingQuote {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding:40px 0px;
+  }
+
+  .landingQuote .quote {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: flex-start;
+    width: 307px;
+    height: 125px;
+    background-color: #56397DCC;
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 10px 20px;
+  }
+
+  .landingQuote .quote h3 {
+    font-size: 16px;
+    font-weight: 600;
+        font-family: "SF pro Display-Bold", Helvetica;
+  }
+
+    .landingQuote .quote p {
+    font-size: 13px;
+    font-weight: 300;
+    /* width: 157px; */
+  }
+}
+
+
+/* screen responsiveness 1440px */
+@media only screen and (min-width: 1440px)  {
+    .LandingMain {
+    padding: 40px 80px;
+  }
+  
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .mainImg {
+    width: 560px;
+    height: 539px;
+    order: 2;
+  }
+
+
+
+    .mainText h1 {
+    display: block;
+    font-size: 64px;
+    color: #56397D;
+    /* line-height: 100%; */
+    font-weight: 700;
+    letter-spacing: 0;
+    Width: 658px;
+    Height: 200px;
+  }
+
+  .mainText h2 {
+    display: none ;
+  }
+
+    .mainText p:nth-of-type(2),
+  .mainText p:first-of-type {
+        display: block;
+    width: 444px;
+    color: #56397D;
+    font-size: 24px;
+    text-align: left;
+        font-family: "SF Compact Display-Medium", Helvetica;
+    /* padding: 0px 50px; */
+  }
+
+
+      .mainText .genBtn {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+      }
+
+  .mainText .button1 {
+    display: none;
+  }
+
+  .mainText p:last-of-type {
+    display: none;
+  }
+
+  .landingQuote {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding:60px 0px;
+  }
+
+  .landingQuote .quote {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: flex-start;
+    width: 307px;
+    height: 125px;
+    background-color: #56397DCC;
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 10px 10px;
+  }
+
+  .landingQuote .quote h3 {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+    .landingQuote .quote p {
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
