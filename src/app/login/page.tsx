@@ -1,5 +1,6 @@
 'use client'; // Required for interactivity
 
+import React, { useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import styles from "./styles.module.css";
@@ -12,6 +13,13 @@ export default function LoginPage() {
     router.back(); // Goes to previous page in history
     // OR use router.push('/') to always go home
   };
+
+      // this is the data that will be sent to the backend
+    const [user, setUser] = React.useState({
+      email: "",
+      password: "",
+
+    });
 
   return (
     <div className={styles.formSection}>
@@ -35,7 +43,10 @@ export default function LoginPage() {
             id="email"
             type="email"
             placeholder="Email"
-            value=""
+                  value={user.email}
+                  onChange={(e) =>
+                    setUser({ ...user, email: e.target.value })
+                  }
             className={styles.formText}
           />
 
@@ -44,7 +55,10 @@ export default function LoginPage() {
             id="password"
             type="password"
             placeholder="Password"
-            value=""
+                  value={user.password}
+                  onChange={(e) =>
+                    setUser({ ...user, password: e.target.value })
+                  }
             className={styles.formText}
           />
 

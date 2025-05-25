@@ -1,5 +1,6 @@
 "use client"; // Required for interactivity
 
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import styles from "./styles.module.css";
@@ -12,6 +13,12 @@ export default function forgot_password() {
     router.back(); // Goes to previous page in history
     // OR use router.push('/') to always go home
   };
+
+    // this is the data that will be sent to the backend
+    const [user, setUser] = React.useState({
+      email: "",
+      code: "",
+    });
 
   return (
     <div className={styles.forgot_password}>
@@ -35,7 +42,10 @@ export default function forgot_password() {
             id="email"
             type="email"
             placeholder="Email"
-            value=""
+            value={user.email}
+            onChange={(e) =>
+              setUser({ ...user, email: e.target.value })
+            }
             className={styles.formText}
           />
           <button className={styles.button}>
@@ -48,7 +58,10 @@ export default function forgot_password() {
             id="code"
             type="number"
             placeholder="Code"
-            value=""
+            value={user.code}
+            onChange={(e) =>
+              setUser({ ...user, code: e.target.value })
+            }
             className={styles.formText}
           />
           <Link href="/create_password" className={styles.button}>

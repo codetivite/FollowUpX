@@ -1,24 +1,35 @@
-'use client'; // Required for interactivity
-import { useRouter } from 'next/navigation';
+"use client"; // Required for interactivity
+
+import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import styles from "./styles.module.css";
 import Link from "next/link";
 
 export default function SignupPage() {
-      const router = useRouter();
+  const router = useRouter();
 
   const handleGoBack = () => {
     router.back(); // Goes to previous page in history
     // OR use router.push('/') to always go home
   };
 
+  // this is the data that will be sent to the backend
+  const [user, setUser] = React.useState({
+    fullname: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirm_password: "",
+  });
+
   return (
     <div className={styles.formSection}>
-      <img 
-      src="/arrow_back.svg" 
-      alt="" 
-      className={styles.arrowBack}
-      onClick={handleGoBack} 
+      <img
+        src="/arrow_back.svg"
+        alt=""
+        className={styles.arrowBack}
+        onClick={handleGoBack}
       />
       <div className={styles.logo}>
         <img src="/logo.svg" alt="" />
@@ -35,7 +46,8 @@ export default function SignupPage() {
             id="fullname"
             type="text"
             placeholder="Full Name"
-            value=""
+            value={user.fullname}
+            onChange={(e) => setUser({ ...user, fullname: e.target.value })}
             className={styles.formText}
           />
 
@@ -44,7 +56,8 @@ export default function SignupPage() {
             id="email"
             type="email"
             placeholder="Email"
-            value=""
+            value={user.email}
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
             className={styles.formText}
           />
 
@@ -53,7 +66,8 @@ export default function SignupPage() {
             id="phone"
             type="text"
             placeholder="Phone Number"
-            value=""
+            value={user.phone}
+            onChange={(e) => setUser({ ...user, phone: e.target.value })}
             className={styles.formText}
           />
 
@@ -62,7 +76,8 @@ export default function SignupPage() {
             id="password"
             type="password"
             placeholder="Password"
-            value=""
+            value={user.password}
+            onChange={(e) => setUser({ ...user, password: e.target.value })}
             className={styles.formText}
           />
 
@@ -71,7 +86,10 @@ export default function SignupPage() {
             id="confirm_password"
             type="text"
             placeholder="Confirm password"
-            value=""
+            value={user.confirm_password}
+            onChange={(e) =>
+              setUser({ ...user, confirm_password: e.target.value })
+            }
             className={styles.formText}
           />
 

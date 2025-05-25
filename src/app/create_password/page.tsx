@@ -1,5 +1,6 @@
 "use client"; // Required for interactivity
 
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import styles from "./styles.module.css";
@@ -13,6 +14,12 @@ export default function create_password() {
     // OR use router.push('/') to always go home
   };
 
+      // this is the data that will be sent to the backend
+      const [user, setUser] = React.useState({
+        new_password: "",
+        new_password_confirmation: "",
+      });
+
   return (
     <div className={styles.create_password}>
       <img
@@ -22,7 +29,7 @@ export default function create_password() {
         onClick={handleGoBack}
       />
       <div className={styles.create_section}>
-        <img src="" alt="" />
+        <img src="null" alt="" />
         <div className={styles.create_text}>
           <h3>Create New Password</h3>
           <p>Please use a password that has not been used before.</p>
@@ -36,17 +43,23 @@ export default function create_password() {
               id="new_password"
               type="number"
               placeholder="New Password"
-              value=""
+            value={user.new_password}
+            onChange={(e) =>
+              setUser({ ...user, new_password: e.target.value })
+            }
               className={styles.formText}
             />
 
             {/* confirm new password */}
-            <label htmlFor="password_confirmation">Confirm New Password</label>
+            <label htmlFor="new_password_confirmation">Confirm New Password</label>
             <input
-              id="password_confirmation"
+              id="new_password_confirmation"
               type="number"
               placeholder="Confirm New Password"
-              value=""
+            value={user.new_password_confirmation}
+            onChange={(e) =>
+              setUser({ ...user, new_password_confirmation: e.target.value })
+            }
               className={styles.formText}
             />
 
