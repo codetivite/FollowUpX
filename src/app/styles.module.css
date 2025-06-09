@@ -1,4 +1,4 @@
-@media only screen and (min-width: 320px)  {
+@media only screen and (min-width: 320px) {
   .LandingMain {
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
     gap: 0px;
   }
 
-    .main .logo {
+  .main .logo {
     width: 130px;
     height: 130px;
     justify-self: flex-start;
@@ -63,85 +63,6 @@
     display: none;
   }
 
-  .mainText .button, .button1 {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 190px;
-    height: 37px;
-    background-color: #56397D;
-    border-radius: 50px;
-    outline: 0;
-    border: 0;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: "SF Compact Display-Medium", Helvetica;
-    transition: all 0.3s;
-    overflow: hidden;
-    box-shadow: 0 4px 4px 0 rgb(33, 33, 70);
-    cursor: pointer;
-
-  }
-
-  .button span,
-  .button1 span {
-    position: relative;
-    z-index: 50;
-  }
-
-  .button:hover span,
-  .button1:hover span {
-    color: #56397D;
-  }
-
-  .button::before,
-  .button::after {
-    content: "";
-    position: absolute;
-    transition: inherit;
-    transform: scale(0);
-    border-radius: 50%;
-    background-color: whitesmoke;
-  }
-
-    .button1::before,
-  .button1::after {
-    content: "";
-    position: absolute;
-    transition: inherit;
-    transform: scale(0);
-    border-radius: 50%;
-    background-color: whitesmoke;
-  }
-
-  .button1::before,
-  .button::before {
-    top: 0;
-    left: 0;
-    right: 50%;
-    bottom: 50%;
-  }
-
-    .button1::after,
-  .button::after {
-    bottom: 0;
-    right: 0;
-    top: 50%;
-    left: 50%;
-  }
-
-  .button:hover::before,
-  .button:hover::after {
-    transform: scale(3);
-  }
-
-    .button1:hover::before,
-  .button1:hover::after {
-    transform: scale(3);
-  }
-
   .mainText p:last-of-type {
     font-weight: 500;
     color: #56397D;
@@ -155,8 +76,8 @@
 
 /* screen responsiveness 768px */
 @media only screen and (min-width: 768px) {
-      .main .logo {
-        display: none;
+  .main .logo {
+    display: none;
   }
 
   .mainImg {
@@ -181,18 +102,18 @@
     text-align: center;
   }
 
-    .mainText p:last-of-type .link1 {
+  .mainText p:last-of-type .link1 {
     font-weight: 600;
 
   }
 }
 
 /* screen responsiveness 1024px */
-@media only screen and (min-width: 1024px)  {
-    .LandingMain {
+@media only screen and (min-width: 1024px) {
+  .LandingMain {
     padding: 40px 40px;
   }
-  
+
   .main {
     display: flex;
     flex-direction: row;
@@ -207,7 +128,7 @@
     order: 2;
   }
 
-    .mainText {
+  .mainText {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -215,7 +136,7 @@
     gap: 20px;
   }
 
-    .mainText h1 {
+  .mainText h1 {
     display: block;
     font-size: 48px;
     color: #56397D;
@@ -227,33 +148,26 @@
   }
 
   .mainText h2 {
-    display: none ;
+    display: none;
   }
 
-    .mainText p:nth-of-type(2),
+  .mainText p:nth-of-type(2),
   .mainText p:first-of-type {
-        display: block;
+    display: block;
     width: 329px;
     color: #56397D;
     font-size: 18px;
     text-align: left;
-        font-family: "SF Compact Display-Medium", Helvetica;
+    font-family: "SF Compact Display-Medium", Helvetica;
     /* padding: 0px 50px; */
   }
 
 
-      .mainText .genBtn {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-      }
-
-        .mainText .button, .button1 {
-
-    width: 140px;
-    height: 37px;
-
+  .mainText .genBtn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
   }
 
   .mainText .button1 {
@@ -270,7 +184,7 @@
     justify-content: space-around;
     align-items: center;
     gap: 20px;
-    padding:40px 0px;
+    padding: 40px 0px;
   }
 
   .landingQuote .quote {
@@ -289,10 +203,10 @@
   .landingQuote .quote h3 {
     font-size: 16px;
     font-weight: 600;
-        font-family: "SF pro Display-Bold", Helvetica;
+    font-family: "SF pro Display-Bold", Helvetica;
   }
 
-    .landingQuote .quote p {
+  .landingQuote .quote p {
     font-size: 13px;
     font-weight: 300;
     /* width: 157px; */
@@ -301,11 +215,11 @@
 
 
 /* screen responsiveness 1440px */
-@media only screen and (min-width: 1440px)  {
-    .LandingMain {
+@media only screen and (min-width: 1440px) {
+  .LandingMain {
     padding: 40px 80px;
   }
-  
+
   .main {
     display: flex;
     flex-direction: row;
@@ -322,7 +236,7 @@
 
 
 
-    .mainText h1 {
+  .mainText h1 {
     display: block;
     font-size: 64px;
     color: #56397D;
@@ -334,27 +248,27 @@
   }
 
   .mainText h2 {
-    display: none ;
+    display: none;
   }
 
-    .mainText p:nth-of-type(2),
+  .mainText p:nth-of-type(2),
   .mainText p:first-of-type {
-        display: block;
+    display: block;
     width: 444px;
     color: #56397D;
-    font-size: 24px;
+    font-size: 20px;
     text-align: left;
-        font-family: "SF Compact Display-Medium", Helvetica;
+    font-family: "SF Compact Display-Medium", Helvetica;
     /* padding: 0px 50px; */
   }
 
 
-      .mainText .genBtn {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        gap: 40px;
-      }
+  .mainText .genBtn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
 
   .mainText .button1 {
     display: none;
@@ -370,7 +284,7 @@
     justify-content: space-around;
     align-items: center;
     gap: 20px;
-    padding:60px 0px;
+    padding: 60px 0px;
   }
 
   .landingQuote .quote {
@@ -391,7 +305,7 @@
     font-weight: 400;
   }
 
-    .landingQuote .quote p {
+  .landingQuote .quote p {
     font-size: 15px;
     font-weight: 400;
   }

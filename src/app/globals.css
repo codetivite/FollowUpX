@@ -14,17 +14,19 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #FFFFFF;
-    --foreground: #0a0a0a;
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --header-bg: #f8f8f8;
-    --nav-bg: #333333;
+  --background: #ffffff;
+  --foreground: #000000;
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --header-bg: #f8f8f8;
+  --nav-bg: #333333;
   }
 }
 
 /* Dark mode */
 .dark {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
   --bg-color: #1a1a1a;
   --text-color: #f0f0f0;
   --header-bg: #222222;
