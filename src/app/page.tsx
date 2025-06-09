@@ -1,21 +1,49 @@
-'use client'; // Required for interactivity
+"use client"; // Required for interactivity
 
+import React from "react";
 import Image from "next/image";
-import styles from "./styles.module.css";
 import Link from "next/link";
+import commonStyles from "@components/app/styles/common.module.css";
+import styles from "./styles.module.css";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleGetStarted = () => {
+    console.log("Get Started clicked");
+    router.push("/signup");
+  };
+
+  const handleWatchDemo = () => {
+    console.log("Watch Demo clicked - No video linked yet.");
+    // Future: open modal or show demo tooltip here
+  };
+
+  const handleRegister = () => {
+    console.log("Register clicked");
+    router.push("/signup");
+  };
+
+  // const handleLogin = () => {
+  //   router.push("/login");
+  // };
+
   return (
     <div className={styles.LandingMain}>
       <div className={styles.main}>
-      <div className={styles.logo}>
-        <img src="/logo.svg" alt=""  />
-      </div>
-        <img src="/landing.svg" alt="" className={styles.mainImg} />
+        <div className={styles.logo}>
+          <Image src="/logo.svg" alt="Logo" width={100} height={40} />
+        </div>
+        <Image
+          src="/landing.svg"
+          alt="welcome_image"
+          width={560}
+          height={539}
+          className={styles.mainImg}
+        />
         <div className={styles.mainText}>
-          <h1 className={styles.mainTitle}>
-            NEVER MISS A FOLLOW-UP AGAIN
-          </h1>
+          <h1 className={styles.mainTitle}>NEVER MISS A FOLLOW-UP AGAIN</h1>
           <h2>Let's Get started</h2>
           <p>
             Our intelligent follow-up assistant automatically tracks customer
@@ -23,25 +51,30 @@ export default function Home() {
             messages—so you can focus on closing deals instead of chasing them.
           </p>
           <p>Let AI handle the follow-up—so you don’t have to.</p>
-          <div className={styles.genBtn}>
-            <Link href="/signup" className={styles.button}>
-              <span className={styles.btn}>Get Started</span>
-            </Link>
 
-            <Link href="/signup" className={styles.button}>
-              <span className={styles.btn}>Watch Demo</span>
-            </Link>
+          <div className={styles.genBtn}>
+            <button onClick={handleGetStarted} className={commonStyles.button}>
+              <span className={commonStyles.btn}>Get Started</span>
+            </button>
+
+            <button onClick={handleWatchDemo} className={commonStyles.button}>
+              <span className={commonStyles.btn}>Watch Demo</span>
+            </button>
           </div>
 
-          <Link href="/signup" className={styles.button1}>
+          <button onClick={handleRegister} className={`${commonStyles.button} ${styles.button1}`}>
             <span className={styles.btn}>Register</span>
-          </Link>
+          </button>
 
           <p>
-            Already have an account? <Link href="/login" className={styles.link1}>Login</Link>
+            Already have an account?{" "}
+            <Link href="/login" className={styles.link1}>
+              Login
+            </Link>
           </p>
         </div>
       </div>
+
       <div className={styles.landingQuote}>
         <div className={styles.quote}>
           <h3>SMART FOLLOW-UP</h3>
