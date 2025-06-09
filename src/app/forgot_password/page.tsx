@@ -3,70 +3,77 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import commonStyles from "@components/app/styles/common.module.css";
 import styles from "./styles.module.css";
-import Link from "next/link";
+import BackArrow from "@components/components/backArrow/BackArrow";
+// import Link from "next/link";
 
-export default function forgot_password() {
+export default function ForgotPassword() {
   const router = useRouter();
 
-  const handleGoBack = () => {
-    router.back(); // Goes to previous page in history
-    // OR use router.push('/') to always go home
+  // this is the data that will be sent to the backend
+  const [user, setUser] = React.useState({
+    email: "",
+    code: "",
+  });
+
+  const handleEmailSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Send code to:", user.email);
+    // TODO: Trigger code sending backend call
   };
 
-    // this is the data that will be sent to the backend
-    const [user, setUser] = React.useState({
-      email: "",
-      code: "",
-    });
+  const handleCodeSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Verify code:", user.code);
+    // TODO: Verify code before redirecting
+    router.push("/create_password");
+  };
 
   return (
     <div className={styles.forgot_password}>
-      <img
-        src="/arrow_back.svg"
-        alt=""
-        className={styles.arrowBack}
-        onClick={handleGoBack}
-      />
+      <BackArrow />
       <div className={styles.forgot_section}>
-        <img src="/padlock.svg" alt="" className={styles.padlock} />
+        <Image
+          src="/padlock.svg"
+          alt="Padlock Icon"
+          width={300}
+          height={300}
+          className={styles.padlock}
+        />
         <div className={styles.forgot_text}>
           <h3>Forgot your Password</h3>
           <p>
             Enter your email and we will send you a code to reset your password
           </p>
         </div>
-        <form action="" className={styles.forgot_email}>
+        <form action="" className={styles.forgot_email} onSubmit={handleEmailSubmit}>
           <label htmlFor="email">Enter Email</label>
           <input
             id="email"
             type="email"
             placeholder="Email"
             value={user.email}
-            onChange={(e) =>
-              setUser({ ...user, email: e.target.value })
-            }
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
             className={styles.formText}
           />
-          <button className={styles.button}>
+          <button className={commonStyles.button} type="submit">
             <span>Get the 4 digit code</span>
           </button>
         </form>
-        <form action="" className={styles.enter_code}>
+        <form action="" className={styles.enter_code} onSubmit={handleCodeSubmit}>
           <label htmlFor="code">Enter Verification code</label>
           <input
             id="code"
-            type="number"
+            type="text"
             placeholder="Code"
             value={user.code}
-            onChange={(e) =>
-              setUser({ ...user, code: e.target.value })
-            }
+            onChange={(e) => setUser({ ...user, code: e.target.value })}
             className={styles.formText}
           />
-          <Link href="/create_password" className={styles.button}>
+          <button type="submit" className={commonStyles.button}>
             <span>Continue</span>
-          </Link>
+          </button>
         </form>
       </div>
     </div>

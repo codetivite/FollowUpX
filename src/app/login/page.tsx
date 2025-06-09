@@ -1,84 +1,91 @@
-'use client'; // Required for interactivity
+"use client";
 
-import React, { useEffect } from "react";
-import { useRouter } from 'next/navigation';
+import React from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
+import commonStyles from "@components/app/styles/common.module.css";
 import styles from "./styles.module.css";
+import BackArrow from "@components/components/backArrow/BackArrow";
+import Logo from "@components/components/logo/Logo";
 import Link from "next/link";
 
 export default function LoginPage() {
-    const router = useRouter();
+  const router = useRouter();
 
-  const handleGoBack = () => {
-    router.back(); // Goes to previous page in history
-    // OR use router.push('/') to always go home
+  const [user, setUser] = React.useState({
+    email: "",
+    password: "",
+  });
+
+  // Temporary login handler
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Simulate login success
+    console.log("Login form submitted:", user);
+
+    // Redirect to dashboard
+    router.push("/dashboard");
   };
-
-      // this is the data that will be sent to the backend
-    const [user, setUser] = React.useState({
-      email: "",
-      password: "",
-
-    });
 
   return (
     <div className={styles.formSection}>
-      <img 
-      src="/arrow_back.svg" 
-      alt="" 
-      className={styles.arrowBack}
-      onClick={handleGoBack}
-      />
+      <BackArrow />
       <div className={styles.logo}>
-        <img src="/logo.svg" alt=""  />
+        <Logo />
       </div>
       <div className={styles.formPage}>
         <h1>Login</h1>
         <p className={styles.formSpan}>
           Welcome back! Please enter your credentials to access your account
         </p>
-        <form action="" method="post">
-          {/* email */}
+
+        <form onSubmit={handleSubmit}>
           <input
             id="email"
             type="email"
             placeholder="Email"
-                  value={user.email}
-                  onChange={(e) =>
-                    setUser({ ...user, email: e.target.value })
-                  }
+            value={user.email}
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
             className={styles.formText}
+            required
           />
 
-          {/* password */}
-          <input
-            id="password"
-            type="password"
-            placeholder="Password"
-                  value={user.password}
-                  onChange={(e) =>
-                    setUser({ ...user, password: e.target.value })
-                  }
-            className={styles.formText}
-          />
+          <div className={styles.formText}>
+            <input
+              type="password"
+              placeholder="Password"
+              value={user.password}
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
+            />
+            <Image
+              src="/Eye.svg"
+              alt="visible_eye"
+              width={24}
+              height={24}
+              onClick={() => router.back()}
+            />
+          </div>
 
-          <p className="">
+          <p>
             <Link href="/forgot_password" className={styles.link}>
               Forgot password?
             </Link>
           </p>
 
           <div className={styles.but}>
-            <Link href="/dashboard" className={styles.button}>
-              <span className={styles.btn}>Login</span>
-            </Link>
+            {/* Submit instead of Link */}
+            <button type="submit" className={commonStyles.button}>
+              <span className={commonStyles.btn}>Login</span>
+            </button>
 
             <p className={styles.p}>or</p>
 
-            <Link href="" className={styles.button1}>
-              <img src="/google.svg" alt="" />
-              <span className={styles.btn}>Login with Google</span>
-            </Link>
+            {/* Keep Google login link as placeholder */}
+            <button type="button" className={commonStyles.button1}>
+              <Image src="/google.svg" alt="" width={35} height={35} />
+              <span className={commonStyles.btn}>Login with Google</span>
+            </button>
           </div>
 
           <p className={styles.p}>
@@ -89,8 +96,15 @@ export default function LoginPage() {
           </p>
         </form>
       </div>
+
       <div>
-        <img src="/login.svg" alt="" className={styles.img} />
+        <Image
+          src="/login.svg"
+          alt="Login Illustration"
+          width={650}
+          height={650}
+          className={styles.img}
+        />
       </div>
     </div>
   );
