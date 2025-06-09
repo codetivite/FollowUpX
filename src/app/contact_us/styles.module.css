@@ -44,19 +44,6 @@
     padding-top: 10px;
   }
 
-  .contact_us .arrowBack {
-    position: absolute;
-    left: 30px;
-    top: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .contact_us .arrowBack:hover {
-    transform: scale(1.03);
-    transition: all 0.3s ease;
-  }
-
   .contact_details {
     display: flex;
     flex-direction: column;
@@ -83,66 +70,6 @@
     outline: none;
   }
 
-  .button {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 37px;
-    background-color: #56397D;
-    border-radius: 50px;
-    outline: 0;
-    border: 0;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: "SF Compact Display-Medium", Helvetica;
-    transition: all 0.3s;
-    overflow: hidden;
-    box-shadow: 0 4px 4px 0 rgb(33, 33, 70);
-    cursor: pointer;
-  }
-
-  .button span {
-    position: relative;
-    z-index: 50;
-  }
-
-  .button:hover span {
-    color: #56397D;
-    ;
-  }
-
-  .button::before,
-  .button::after {
-    content: "";
-    position: absolute;
-    transition: inherit;
-    transform: scale(0);
-    border-radius: 50%;
-    background-color: whitesmoke;
-  }
-
-  .button::before {
-    top: 0;
-    left: 0;
-    right: 50%;
-    bottom: 50%;
-  }
-
-  .button::after {
-    bottom: 0;
-    right: 0;
-    top: 50%;
-    left: 50%;
-  }
-
-  .button:hover::before,
-  .button:hover::after {
-    transform: scale(3);
-  }
-
   .contact_us .contact_img {
     display: none;
   }
@@ -154,10 +81,6 @@
     padding: 60px 40px;
   }
 
-  .contact_us .arrowBack {
-    display: none;
-  }
-
   .contact_text h3 {
     font-size: 32px;
     text-align: center;
@@ -167,10 +90,6 @@
     display: block;
     color: #56397D;
     text-align: center;
-  }
-
-  .button {
-    width: 287px;
   }
 }
 
@@ -201,10 +120,6 @@
     /* width: 400px;
     height: 250px; */
   }
-
-    .button {
-    width: 207px;
-  }
 }
 
 /* screen responsiveness 1440px */
@@ -232,10 +147,5 @@
     box-shadow: 0 4px 4px 0 rgb(33, 33, 70);
     border-radius: 50px;
     outline: none;
-  }
-
-    .button {
-    width: 287px;
-    font-size: 20px;
   }
 }

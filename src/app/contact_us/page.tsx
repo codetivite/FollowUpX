@@ -3,18 +3,15 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import commonStyles from "@components/app/styles/common.module.css";
 import styles from "./styles.module.css";
-import Link from "next/link";
+import BackArrow from "@components/components/backArrow/BackArrow";
+// import Link from "next/link";
 
 export default function ContactPage() {
   const router = useRouter();
 
-  const handleGoBack = () => {
-    router.back(); // Goes to previous page in history
-    // OR use router.push('/') to always go home
-  };
-
-    // this is the data that will be sent to the backend
+  // this is the data that will be sent to the backend
   const [user, setUser] = React.useState({
     firstName: "",
     lastName: "",
@@ -25,12 +22,8 @@ export default function ContactPage() {
 
   return (
     <div className={styles.contact_us}>
-      <img
-        src="/arrow_back.svg"
-        alt=""
-        className={styles.arrowBack}
-        onClick={handleGoBack}
-      />
+      <BackArrow />
+
       <div className={styles.contact_section}>
         <div className={styles.contact_form}>
           <div className={styles.contact_text}>
@@ -50,7 +43,9 @@ export default function ContactPage() {
                   type="text"
                   placeholder="First Name"
                   value={user.firstName}
-                            onChange={(e) => setUser({ ...user, firstName: e.target.value })}
+                  onChange={(e) =>
+                    setUser({ ...user, firstName: e.target.value })
+                  }
                   className={styles.formText}
                 />
               </div>
@@ -62,8 +57,10 @@ export default function ContactPage() {
                   id="last_name"
                   type="text"
                   placeholder="Last Name"
-                  value={user.email}
-                            onChange={(e) => setUser({ ...user, lastName: e.target.value })}
+                  value={user.lastName}
+                  onChange={(e) =>
+                    setUser({ ...user, lastName: e.target.value })
+                  }
                   className={styles.formText}
                 />
               </div>
@@ -78,7 +75,7 @@ export default function ContactPage() {
                   type="email"
                   placeholder="Email"
                   value={user.email}
-                            onChange={(e) => setUser({ ...user, email: e.target.value })}
+                  onChange={(e) => setUser({ ...user, email: e.target.value })}
                   className={styles.formText}
                 />
               </div>
@@ -88,10 +85,10 @@ export default function ContactPage() {
                 <label htmlFor="phone">Phone number</label>
                 <input
                   id="phone"
-                  type="number"
+                  type="tel"
                   placeholder="Phone"
                   value={user.phone}
-                            onChange={(e) => setUser({ ...user, phone: e.target.value })}
+                  onChange={(e) => setUser({ ...user, phone: e.target.value })}
                   className={styles.formText}
                 />
               </div>
@@ -104,20 +101,29 @@ export default function ContactPage() {
                 name="message"
                 id="message"
                 placeholder="Message"
-                cols="30"
-                rows="5"
+                cols={30}
+                rows={5}
+                value={user.message}
+                onChange={(e) => setUser({ ...user, message: e.target.value })}
                 className={styles.contact_message}
               ></textarea>
             </div>
 
             {/* button */}
-            <button className={styles.button}>
+            <button className={commonStyles.button}
+            type="submit">
               <span>Submit</span>
             </button>
           </form>
         </div>
         <div>
-          <img src="/contact.svg" alt="" className={styles.contact_img} />
+          <Image
+            src="/contact.svg"
+            alt="Contact Illustration"
+            width={700}
+            height={400}
+            className={styles.contact_img}
+          />
         </div>
       </div>
     </div>
