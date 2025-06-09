@@ -1,21 +1,18 @@
-"use client"; // Required for interactivity
+"use client";
 
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import axios from "axios";
+import commonStyles from "@components/app/styles/common.module.css";
 import styles from "./styles.module.css";
 import Link from "next/link";
+import BackArrow from "@components/components/backArrow/BackArrow";
+import Logo from "@components/components/logo/Logo";
 
 export default function SignupPage() {
   const router = useRouter();
-
-  const handleGoBack = () => {
-    router.back(); // Goes to previous page in history
-    // OR use router.push('/') to always go home
-  };
-
-  // this is the data that will be sent to the backend
-  const [user, setUser] = React.useState({
+  const [user, setUser] = useState({
     fullname: "",
     email: "",
     phone: "",
@@ -23,16 +20,44 @@ export default function SignupPage() {
     confirm_password: "",
   });
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (user.password !== user.confirm_password) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    try {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1/auth/register`,
+        {
+          first_name: user.fullname,
+          last_name: "", // You can split fullname if needed
+          email: user.email,
+          password: user.password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      console.log("Registration successful:", res.data);
+      alert("Registration successful!");
+      router.push("/login");
+    } catch (error: any) {
+      console.error("Registration failed:", error.response?.data || error.message);
+      alert("Registration failed. Please try again.");
+    }
+  };
+
   return (
     <div className={styles.formSection}>
-      <img
-        src="/arrow_back.svg"
-        alt=""
-        className={styles.arrowBack}
-        onClick={handleGoBack}
-      />
+      <BackArrow />
       <div className={styles.logo}>
-        <img src="/logo.svg" alt="" />
+        <Logo />
       </div>
       <div className={styles.formPage}>
         <h1>Sign Up</h1>
@@ -40,83 +65,79 @@ export default function SignupPage() {
           Join us today! Fill in the details below to get started.
         </p>
 
-        <form action="" method="post">
-          {/* fullname */}
+        <form onSubmit={handleSubmit}>
           <input
-            id="fullname"
             type="text"
             placeholder="Full Name"
             value={user.fullname}
             onChange={(e) => setUser({ ...user, fullname: e.target.value })}
             className={styles.formText}
+            required
           />
 
-          {/* email */}
           <input
-            id="email"
             type="email"
             placeholder="Email"
             value={user.email}
             onChange={(e) => setUser({ ...user, email: e.target.value })}
             className={styles.formText}
+            required
           />
 
-          {/* phone */}
           <input
-            id="phone"
-            type="text"
+            type="tel"
             placeholder="Phone Number"
             value={user.phone}
             onChange={(e) => setUser({ ...user, phone: e.target.value })}
             className={styles.formText}
           />
 
-          {/* password */}
-          <input
-            id="password"
-            type="password"
-            placeholder="Password"
-            value={user.password}
-            onChange={(e) => setUser({ ...user, password: e.target.value })}
-            className={styles.formText}
-          />
-
-          {/* confirm_password */}
-          <input
-            id="confirm_password"
-            type="text"
-            placeholder="Confirm password"
-            value={user.confirm_password}
-            onChange={(e) =>
-              setUser({ ...user, confirm_password: e.target.value })
-            }
-            className={styles.formText}
-          />
-
-          <div className="">
-            <p>
-              By creating an account, you agree to our
-              <Link href="/terms" className={styles.link}>
-                Terms of Services
-              </Link>
-              and
-              <Link href="/policy" className={styles.link}>
-                Privacy policy
-              </Link>
-            </p>
+          <div className={styles.formText}>
+            <input
+              type="password"
+              placeholder="Password"
+              value={user.password}
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
+              required
+            />
+            <Image src="/Eye.svg" alt="visible_eye" width={24} height={24} />
           </div>
 
-          <div className={styles.but}>
-            <Link href="/login" className={styles.button}>
-              <span className={styles.btn}>Signup</span>
+          <div className={styles.formText}>
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              value={user.confirm_password}
+              onChange={(e) =>
+                setUser({ ...user, confirm_password: e.target.value })
+              }
+              required
+            />
+            <Image src="/Eye.svg" alt="visible_eye" width={24} height={24} />
+          </div>
+
+          <p>
+            By creating an account, you agree to our{" "}
+            <Link href="/terms" className={styles.link}>
+              Terms of Services
+            </Link>{" "}
+            and{" "}
+            <Link href="/policy" className={styles.link}>
+              Privacy Policy
             </Link>
+          </p>
+
+          <div className={styles.but}>
+            <button type="submit" className={commonStyles.button}>
+              <span className={commonStyles.btn}>Signup</span>
+            </button>
 
             <p className={styles.p}>or</p>
 
-            <Link href="" className={styles.button1}>
-              <img src="/google.svg" alt="" />
-              <span className={styles.btn}>Signup with Google</span>
-            </Link>
+            <button type="button" className={commonStyles.button1}>
+              <Image src="/google.svg" alt="Google" width={30} height={30} />
+              <span className={commonStyles.btn}>Signup with Google</span>
+            </button>
           </div>
 
           <p className={styles.p}>
@@ -128,7 +149,7 @@ export default function SignupPage() {
         </form>
       </div>
       <div className={styles.img}>
-        <img src="/signup.svg" alt="" />
+        <Image src="/reg_image.svg" alt="Signup" width={650} height={650} />
       </div>
     </div>
   );
