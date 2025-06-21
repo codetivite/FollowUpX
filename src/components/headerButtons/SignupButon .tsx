@@ -1,0 +1,18 @@
+"use client";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import styles from "../../styles/common.module.css";
+
+export default function SignupButton() {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/waitlist");
+  };
+
+  return (
+    <button onClick={handleClick} className={styles.primaryButton}>
+      Get Started
+    </button>
+  );
+}

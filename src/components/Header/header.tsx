@@ -1,99 +1,80 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./styles.module.css";
-import { getCookie } from "cookies-next";
 import Logo from "../logo/Logo";
+import WaitlistButton from "../headerButtons/WaitlistButton";
+import LoginButton from "../headerButtons/LoginButton";
+import { FaBars, FaTimes } from "react-icons/fa";
 
-export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+type Props = {
+  onJoinClick: () => void;
+};
 
-  // Load and apply dark mode preference
+export default function Header({ onJoinClick }: Props) {
+  const [isOpen, setIsOpen] = useState(false);
+  const drawerRef = useRef<HTMLDivElement>(null);
+
+  // Close mobile drawer on outside click
   useEffect(() => {
-    const savedTheme = getCookie("theme");
-    const localPref = localStorage.getItem("darkMode");
-    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    const prefersDark = savedTheme
-      ? savedTheme === "dark"
-      : localPref
-      ? JSON.parse(localPref)
-      : systemPrefersDark;
-
-    setDarkMode(prefersDark);
-  }, []);
-
-  // Apply dark class and persist preference
-  useEffect(() => {
-    const root = document.documentElement;
-    if (darkMode) {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
+    function handleClickOutside(e: MouseEvent) {
+      if (drawerRef.current && !drawerRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
     }
-
-    localStorage.setItem("darkMode", JSON.stringify(darkMode));
-    document.cookie = `theme=${darkMode ? "dark" : "light"}; path=/;`;
-  }, [darkMode]);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
 
   return (
     <header className={styles.header}>
-      {/* Top Bar - Logo + Utilities */}
-      <div className={styles.topBar}>
-        <div className={styles.logo}>
+      <div className={styles.headerContent}>
         <Logo />
+        <div className={styles.navLinks}>
+          <li>Products</li>
+          <li>Features</li>
+          <li>Demo</li>
+          <li>About</li>
         </div>
+      </div>
+      <div className={styles.headerButtons}>
+        <WaitlistButton onClick={onJoinClick} />
+        <LoginButton />
+      </div>
 
-        <div className={styles.utilities}>
-          <button
-            onClick={toggleDarkMode}
-            className={styles.darkModeToggle}
-            aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+      {/* Mobile Menu Button */}
+      <button className={styles.menuBtn} onClick={() => setIsOpen(true)}>
+        <FaBars />
+      </button>
+
+      {/* Mobile Side Drawer */}
+      {isOpen && (
+        <div className={styles.mobileBackdrop}>
+          <div
+            className={`${styles.mobileDrawer} ${isOpen ? styles.open : ""}`}
+            ref={drawerRef}
           >
-            {darkMode ? "☀️" : "🌙"}
-          </button>
-          <select className={styles.languageSelector}>
-            <option>EN</option>
-            <option>FR</option>
-          </select>
-          <div className={styles.authLinks}>
-            <a href="/login">Login</a>
-            <span>|</span>
-            <a href="/signup">Register</a>
+            <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>
+              <FaTimes />
+            </button>
+            <ul className={styles.drawerLinks}>
+              <li>Products</li>
+              <li>Features</li>
+              <li>Demo</li>
+              <li>About</li>
+              <li>
+                <WaitlistButton onClick={onJoinClick} />
+              </li>
+              <li>
+                <LoginButton />
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-
-      {/* Main Navigation */}
-      <div className={styles.nav}>
-        <nav className={styles.mainNav}>
-          <a href="/">Home</a>
-          <a href="/about_us">About</a>
-          <a href="/contact_us">Contact</a>
-        </nav>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className={styles.menuButton}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          ☰
-        </button>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className={styles.mobileNav}>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact_us">Contact</a>
-          </div>
-        )}
-      </div>
+      )}
     </header>
   );
 }
-
