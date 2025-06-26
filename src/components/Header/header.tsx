@@ -34,10 +34,18 @@ export default function Header({ onJoinClick }: Props) {
       <div className={styles.headerContent}>
         <Logo />
         <div className={styles.navLinks}>
-          <li>Products</li>
-          <li>Features</li>
-          <li>Demo</li>
-          <li>About</li>
+          <li>
+            <a href="">Products</a>
+          </li>
+          <li>
+            <a href="#features">Features</a>
+          </li>
+          <li>
+            <a href="">Demo</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
         </div>
       </div>
       <div className={styles.headerButtons}>
@@ -57,14 +65,25 @@ export default function Header({ onJoinClick }: Props) {
             className={`${styles.mobileDrawer} ${isOpen ? styles.open : ""}`}
             ref={drawerRef}
           >
-            <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>
+            <button
+              className={styles.closeBtn}
+              onClick={() => setIsOpen(false)}
+            >
               <FaTimes />
             </button>
             <ul className={styles.drawerLinks}>
-              <li>Products</li>
-              <li>Features</li>
-              <li>Demo</li>
-              <li>About</li>
+              <li>
+                <a href="">Products</a>
+              </li>
+              <li>
+                <a href="#features">Features</a>
+              </li>
+              <li>
+                <a href="">Demo</a>
+              </li>
+              <li>
+                <a href="#about">About</a>
+              </li>
               <li>
                 <WaitlistButton onClick={onJoinClick} />
               </li>
