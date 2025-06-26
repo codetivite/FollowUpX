@@ -1,6 +1,9 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./styles.module.css";
+import axios from "axios";
+import toast from "react-hot-toast";
+import countryCodes from "@components/data/countryCodes.json";
 
 export default function JoinWaitlistModal({
   isOpen,
@@ -11,12 +14,64 @@ export default function JoinWaitlistModal({
 }) {
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // This handles clicks on the backdrop
+  const [firstName, setFirstName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhone] = useState("");
+  const [referralCode, setReferralCode] = useState("");
+  const [countryCode, setCountryCode] = useState("+234");
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
       onClose();
     }
   };
+
+  const formatPhoneNumber = () => {
+    const formatted = phoneNumber.startsWith("0")
+      ? phoneNumber.substring(1)
+      : phoneNumber;
+    return `${countryCode}${formatted}`;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1/aspirants/`,
+        {
+          first_name: firstName,
+          email,
+          phone_number: formatPhoneNumber(),
+          referral_code: referralCode || undefined,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (res.data && res.data.success !== false) {
+        toast.success(`${firstName} has joined waitlist successfully`);
+        onClose();
+        setFirstName("");
+        setEmail("");
+        setPhone("");
+        setReferralCode("");
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch (error: any) {
+      console.error(error);
+      toast.error(`Submission failed. ${error.message ?? "Check your network or input."}`);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const isFormValid = firstName && email && phoneNumber;
 
   if (!isOpen) return null;
 
@@ -28,12 +83,53 @@ export default function JoinWaitlistModal({
         </button>
         <h2>Join the Waitlist</h2>
         <p>Be among the first to experience FollowUpX when we launch</p>
-        <form className={styles.form}>
-          <input type="text" placeholder="Enter your First Name" required />
-          <input type="email" placeholder="Enter your Email" required />
-          <input type="text" placeholder="Enter your Whatsapp number" required />
-          <p>We respect your privacy. Your email will only be used for product updates.</p>
-          <button type="submit">Join Waitlist</button>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Enter your First Name"
+            required
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+          <input
+            type="email"
+            placeholder="Enter your Email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <div className={styles.phoneInputGroup}>
+            <select
+              value={countryCode}
+              onChange={(e) => setCountryCode(e.target.value)}
+            >
+              {countryCodes.map((country) => (
+                <option key={country.dial_code} value={country.dial_code}>
+                  {country.name} ({country.dial_code})
+                </option>
+              ))}
+            </select>
+            <input
+              type="text"
+              placeholder="Enter your Whatsapp number"
+              required
+              value={phoneNumber}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+          </div>
+          <input
+            type="text"
+            placeholder="Referral Code (optional)"
+            value={referralCode}
+            onChange={(e) => setReferralCode(e.target.value)}
+          />
+          <p>
+            We respect your privacy. Your email will only be used for product
+            updates.
+          </p>
+          <button type="submit" disabled={!isFormValid || isLoading}>
+            {isLoading ? "Submitting..." : "Join Waitlist"}
+          </button>
         </form>
       </div>
     </div>
