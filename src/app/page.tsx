@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import WaitlistButton from "@components/components/headerButtons/WaitlistButton";
 import FAQSection from "@components/components/FAQ/FAQ";
 import JoinWaitlistModal from "@components/components/modal/JoinWaitlistModal";
+import ScrollToTopButton from "@components/components/scrollToTopButton/scrollToTopButton";
 import { useState } from "react";
 
 export default function Home() {
@@ -108,7 +109,7 @@ export default function Home() {
       </section>
 
       {/* features section */}
-      <section className={styles.featuresSection}>
+      <section className={styles.featuresSection} id="features">
         <h2 className={styles.featuresTitle}>
           Powerful Features To Elevate Your Outreach
         </h2>
@@ -295,7 +296,7 @@ export default function Home() {
       </section>
 
       {/* premium plan section */}
-      <section className={styles.premiumSection}>
+      <section className={styles.premiumSection} id="pricing">
         <h2 className={styles.premiumTitle}>Premium Plans</h2>
         <div className={styles.premiumFeatures}>
           <div className={styles.featureItem}>
@@ -387,7 +388,7 @@ export default function Home() {
       </section>
 
       {/* story section */}
-      <section className={styles.storySection}>
+      <section className={styles.storySection} id="about">
         <div className={styles.storyContainer}>
           <div className={styles.storyTextContainer}>
             <h2 className={styles.storyTitle}>Our Story</h2>
@@ -485,6 +486,9 @@ export default function Home() {
 
        {/* Modal */}
       <JoinWaitlistModal isOpen={isModalOpen} onClose={closeModal} />
+
+      {/* scroll to the top */}
+      <ScrollToTopButton />
     </>
   );
 }
