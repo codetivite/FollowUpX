@@ -1,0 +1,151 @@
+@media screen and (min-width: 320px) {
+  .IntegrationSection {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    justify-content: center;
+    padding: 60px 10px;
+    align-items: center;
+  }
+
+  .IntegrationSection .IntegrationText {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .IntegrationSection .IntegrationText h1 {
+    font-family: Public Sans, sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 17.6px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .IntegrationSection .IntegrationText p {
+    font-family: Public Sans, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .IntegrationSection .IntegrationContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .IntegrationSection .IntegrationMail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1px solid #8DD193;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px 0px #8DD19329;
+    padding: 30px 10px;
+    width: 100%;
+  }
+
+  .IntegrationSection .integrate {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .IntegrationSection .integrate h2 {
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 50px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .IntegrationSection .IntegrationMail p {
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+  }
+}
+
+/* media responsiveness 768px */
+@media screen and (min-width: 768px) {
+  .IntegrationSection {
+    padding: 80px 40px;
+  }
+
+  .IntegrationSection .IntegrationText h1 {
+    font-size: 34px;
+  }
+
+  .IntegrationSection .IntegrationText p,
+  .IntegrationSection .integrate h2 {
+    font-size: 24px;
+  }
+
+  .IntegrationSection .IntegrationMail p {
+    font-size: 16px;
+  }
+}
+
+/* media responsiveness 1024px */
+@media screen and (min-width: 1024px) {
+  .IntegrationSection {
+    gap: 100px;
+  }
+
+  .IntegrationSection .IntegrationText {
+    width: 796px;
+    gap: 40px;
+  }
+
+  .IntegrationSection .IntegrationText h1 {
+    font-size: 40px;
+  }
+
+  .IntegrationSection .IntegrationText p,
+  .IntegrationSection .integrate h2 {
+    font-size: 32px;
+    line-height: 50px;
+  }
+
+  .IntegrationSection .IntegrationContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 850px;
+    height: 225px;
+    margin: 50px 0 90px 0;
+  }
+
+  .IntegrationSection .IntegrationMail {
+    padding: 30px 30px;
+    height: 225px;
+  }
+
+  .IntegrationSection .IntegrationMail p {
+    font-size: 20px;
+  }
+}
+
+/* media responsiveness 1440px */
+@media screen and (min-width: 1440px) {
+  .IntegrationSection .IntegrationContainer {
+    width: 1043px;
+  }
+}
