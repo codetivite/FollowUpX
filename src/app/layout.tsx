@@ -5,15 +5,16 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@components/components/Header/header";
 import Footer from "@components/components/Footer/footer";
 import "./globals.css";
-import { Plus_Jakarta_Sans } from 'next/font/google';
-import "@components/icons/fontawesome"; 
+import { Plus_Jakarta_Sans } from "next/font/google";
+import "@components/icons/fontawesome";
 import React, { useState } from "react";
+import { Toaster } from "react-hot-toast";
 import WaitlistModal from "@components/components/modal/JoinWaitlistModal";
 
 const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['400', '600', '700', '800' ], // Add any weights you plan to use
-  variable: '--font-jakarta',
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"], // Add any weights you plan to use
+  variable: "--font-jakarta",
 });
 
 const geistSans = Geist({
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Toaster position="top-right" />
         <Header onJoinClick={() => setModalOpen(true)} />
         <main>{children}</main>
         <WaitlistModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
