@@ -1,0 +1,48 @@
+// Example campaign data
+
+export const mockCampaigns = [
+  {
+    id: 1,
+    campaignName: "Welcome Series - New signups",
+    status: "Active",
+    leads: "555",
+    startDate: "2024-06-25",
+    endDate: "2024-06-30",
+    description: "A series of emails to welcome new users and guide them through the platform.",
+    targetAudience: "all_leads",
+    note: "Focus on user engagement and retention.",
+  },
+  {
+    id: 2,
+    campaignName: "Product Launch - Q2 2024",
+    status: "Active",
+    leads: "987",
+    startDate: "2024-06-20",
+    endDate: "2024-06-18",
+    description: "A series of emails to welcome new users and guide them through the platform.",
+    targetAudience: "all_leads",
+    note: "Focus on user engagement and retention.",
+  },
+  {
+    id: 3,
+    campaignName: "Re-engagement - Inactive Users",
+    status: "Paused",
+    leads: "111",
+    startDate: "2024-06-18",
+    endDate: "2024-06-18",
+    description: "A series of emails to welcome new users and guide them through the platform.",
+    targetAudience: "all_leads",
+    note: "Focus on user engagement and retention.",
+  },
+  {
+    id: 4,
+    campaignName: "Holiday Promo - December",
+    status: "Completed",
+    leads: "14",
+    startDate: "2024-06-18",
+    endDate: "2024-06-18",
+    description: "A series of emails to welcome new users and guide them through the platform.",
+    targetAudience: "all_leads",
+    note: "Focus on user engagement and retention.",
+  },
+];
