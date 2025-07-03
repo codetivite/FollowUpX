@@ -7,7 +7,7 @@ export default function SignupButton() {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push("/waitlist");
+    router.push("/auth/signUp");
   };
 
   return (

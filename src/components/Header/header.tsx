@@ -4,13 +4,15 @@ import styles from "./styles.module.css";
 import Logo from "../logo/Logo";
 import WaitlistButton from "../headerButtons/WaitlistButton";
 import LoginButton from "../headerButtons/LoginButton";
+import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 type Props = {
-  onJoinClick: () => void;
+  onJoinClick?: () => void;
+  variant?: "default" | "minimal";
 };
 
-export default function Header({ onJoinClick }: Props) {
+export default function Header({ onJoinClick, variant = "default" }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
 
@@ -33,67 +35,53 @@ export default function Header({ onJoinClick }: Props) {
     <header className={styles.header}>
       <div className={styles.headerContent}>
         <Logo />
-        <div className={styles.navLinks}>
-          <li>
-            <a href="">Products</a>
-          </li>
-          <li>
-            <a href="#features">Features</a>
-          </li>
-          <li>
-            <a href="">Demo</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-        </div>
-      </div>
-      <div className={styles.headerButtons}>
-        <WaitlistButton onClick={onJoinClick} />
-        <LoginButton />
-      </div>
-
-      {/* Mobile Menu Button */}
-      <button className={styles.menuBtn} onClick={() => setIsOpen(true)}>
-        <FaBars />
-      </button>
-
-      {/* Mobile Side Drawer */}
-      {isOpen && (
-        <div className={styles.mobileBackdrop}>
-          <div
-            className={`${styles.mobileDrawer} ${isOpen ? styles.open : ""}`}
-            ref={drawerRef}
-          >
-            <button
-              className={styles.closeBtn}
-              onClick={() => setIsOpen(false)}
-            >
-              <FaTimes />
-            </button>
-            <ul className={styles.drawerLinks}>
-              <li>
-                <a href="">Products</a>
-              </li>
-              <li>
-                <a href="#features">Features</a>
-              </li>
-              <li>
-                <a href="">Demo</a>
-              </li>
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <WaitlistButton onClick={onJoinClick} />
-              </li>
-              <li>
-                <LoginButton />
-              </li>
-            </ul>
+        {variant === "default" && (
+          <div className={styles.navLinks}>
+            <li><Link href="">Products</Link></li>
+            <li><Link href="/#features">Features</Link></li>
+            <li><Link href="">Demo</Link></li>
+            <li><Link href="/#about">About</Link></li>
           </div>
-        </div>
+        )}
+      </div>
+
+      {variant === "default" && (
+        <>
+          <div className={styles.headerButtons}>
+            <WaitlistButton onClick={onJoinClick} />
+            <LoginButton />
+          </div>
+
+          <button className={styles.menuBtn} onClick={() => setIsOpen(true)}>
+            <FaBars />
+          </button>
+
+          {isOpen && (
+            <div className={styles.mobileBackdrop}>
+              <div
+                className={`${styles.mobileDrawer} ${isOpen ? styles.open : ""}`}
+                ref={drawerRef}
+              >
+                <button
+                  className={styles.closeBtn}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <FaTimes />
+                </button>
+                <ul className={styles.drawerLinks}>
+                  <li><Link href="">Products</Link></li>
+                  <li><Link href="/#features">Features</Link></li>
+                  <li><Link href="">Demo</Link></li>
+                  <li><Link href="/#about">About</Link></li>
+                  <li><WaitlistButton onClick={onJoinClick} /></li>
+                  <li><LoginButton /></li>
+                </ul>
+              </div>
+            </div>
+          )}
+        </>
       )}
     </header>
   );
 }
+

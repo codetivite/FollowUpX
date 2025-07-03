@@ -7,7 +7,7 @@ export default function LoginButton() {
     const router = useRouter();
 
   return (
-    <button onClick={() => router.push('/login')} className={styles.signUpButton}>
+    <button onClick={() => router.push('/auth/login')} className={styles.signUpButton}>
       Sign In
     </button>
   );

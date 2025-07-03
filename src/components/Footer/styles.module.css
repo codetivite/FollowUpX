@@ -59,18 +59,135 @@
     text-align: center;
     color: #ffffff;
   }
+
+  /* login footer styles */
+  .authFooter {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .authFooter .authFooterLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .authFooter .authFooterText {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .authFooter .authFooterText p {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+  }
+
+  .authFooter .authFooterSocials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .authFooter .authFooterSocials .mainImg:hover {
+      animation: spin 1s linear;
+      cursor: pointer;
+      transition: transform 0.4s ease; 
+  }
+
+  .authFooter .authFooterChat {
+    position: absolute;
+    right: 40px;
+    top: 90px;
+    width: 60px;
+    height: 60px;
+  }
+
+  @keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 }
 
 /* ========== 768px responsiveness ================ */
 @media screen and (min-width: 768px) {
-    .footer .footerLinks li {
+  .footer .footerLinks li {
     width: 160px;
+  }
+
+  /* login footer styles */
+  .authFooter .authFooterText {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .authFooter .authFooterChat {
+    right: 20px;
+    top: 40px;
   }
 }
 
 /* ========== 1024 responsiveness =============== */
 @media screen and (min-width: 1024) {
-    .footer .footerContent {
+  .footer .footerContent {
     width: 75%;
+  }
+
+  /* login footer styles */
+  .authFooter .authFooterLinks {
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  .authFooter .authFooterText p {
+    font-size: 16px;
+  }
+
+  .authFooter .authFooterSocials {
+    justify-content: space-around;
+    gap: 30px;
+  }
+
+  .authFooter .authFooterChat {
+    right: 10px;
+    top: 20px;
+  }
+}
+
+/* ========== 1024 responsiveness =============== */
+@media screen and (min-width: 1024) {
+
+  /* login footer styles */
+  .authFooter .authFooterLinks {
+    gap: 50px;
+  }
+
+    .authFooter .authFooterText {
+    justify-content: space-between;
+    gap: 80px;
+  }
+
+  .authFooter .authFooterSocials {
+    gap: 60px;
+  }
+
+  .authFooter .authFooterChat {
+    right: 50px;
+    top: 10px;
+    width: 70px;
+    height: 70px;
   }
 }
