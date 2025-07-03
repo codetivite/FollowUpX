@@ -2,8 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-// import Link from "next/link";
-// import commonStyles from "@components/app/styles/common.module.css";
 import styles from "./styles.module.css";
 import { useRouter } from "next/navigation";
 import WaitlistButton from "@components/components/headerButtons/WaitlistButton";
@@ -11,6 +9,8 @@ import FAQSection from "@components/components/FAQ/FAQ";
 import JoinWaitlistModal from "@components/components/modal/JoinWaitlistModal";
 import ScrollToTopButton from "@components/components/scrollToTopButton/scrollToTopButton";
 import { useState } from "react";
+import AppImage from "@components/components/AppImage/AppImagee";
+import { FaCheck } from "react-icons/fa";
 
 export default function Home() {
   const router = useRouter();
@@ -20,31 +20,12 @@ export default function Home() {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  const handleGetStarted = () => {
-    console.log("Get Started clicked");
-    router.push("/signup");
-  };
-
-  const handleWatchDemo = () => {
-    console.log("Watch Demo clicked - No video linked yet.");
-    // Future: open modal or show demo tooltip here
-  };
-
-  const handleRegister = () => {
-    console.log("Register clicked");
-    router.push("/signup");
-  };
-
-  // const handleLogin = () => {
-  //   router.push("/login");
-  // };
-
   return (
     <>
-      <link
+      {/* <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      />
+      /> */}
 
       {/* landing page */}
       <section className={styles.landingMain}>
@@ -62,7 +43,7 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.imageContainer}>
-            <Image
+            <AppImage
               src="/land-image.svg"
               alt="Landing Image"
               width={396}
@@ -77,28 +58,28 @@ export default function Home() {
       <section className={styles.trustedSection}>
         <h2 className={styles.trustedTitle}>Trusted by Leading Innovators</h2>
         <div className={styles.trustedLogos}>
-          <Image
+          <AppImage
             src="/codetivite.svg"
             alt=""
             width={70}
             height={70}
             className={styles.companyLogo}
           />
-          <Image
+          <AppImage
             src="/google (2).svg"
             alt=""
             width={70}
             height={70}
             className={styles.companyLogo}
           />
-          <Image
+          <AppImage
             src="/hubspot.svg"
             alt=""
             width={70}
             height={70}
             className={styles.companyLogo}
           />
-          <Image
+          <AppImage
             src="/amazon.svg"
             alt=""
             width={70}
@@ -115,7 +96,7 @@ export default function Home() {
         </h2>
         <div className={styles.featuresGrid}>
           <div className={styles.feature}>
-            <Image
+            <AppImage
               src="tone-detection.svg"
               alt="Feature 1"
               width={50}
@@ -129,7 +110,7 @@ export default function Home() {
             </p>
           </div>
           <div className={styles.feature}>
-            <Image
+            <AppImage
               src="smart-follow.svg"
               alt="Feature 2"
               width={50}
@@ -143,7 +124,7 @@ export default function Home() {
             </p>
           </div>
           <div className={styles.feature}>
-            <Image
+            <AppImage
               src="reminders.svg"
               alt="Feature 3"
               width={50}
@@ -165,7 +146,7 @@ export default function Home() {
           <h2 className={styles.worksTitle}>How It Works</h2>
           <div className={styles.worksSteps}>
             <div className={styles.steps}>
-              <Image
+              <AppImage
                 src="/works1.svg"
                 alt="Connect Inbox"
                 width={40}
@@ -178,7 +159,7 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.steps}>
-              <Image
+              <AppImage
                 src="/works2.svg"
                 alt="Connect Inbox"
                 width={40}
@@ -193,7 +174,7 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.steps}>
-              <Image
+              <AppImage
                 src="/works3.svg"
                 alt="Connect Inbox"
                 width={40}
@@ -210,7 +191,7 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.worksImage}>
-          <Image
+          <AppImage
             src="/works-image.svg"
             alt="How It Works"
             width={615}
@@ -229,7 +210,7 @@ export default function Home() {
         <div className={styles.whoTypes}>
           <div className={styles.types}>
             <div className={styles.typeImage}>
-              <Image
+              <AppImage
                 src="/sales.svg"
                 alt="Sales Professionals"
                 width={50}
@@ -244,7 +225,7 @@ export default function Home() {
           </div>
           <div className={styles.types}>
             <div className={styles.typeImage}>
-              <Image
+              <AppImage
                 src="/success.svg"
                 alt="Customer Success Teams"
                 width={50}
@@ -259,7 +240,7 @@ export default function Home() {
           </div>
           <div className={styles.types}>
             <div className={styles.typeImage}>
-              <Image
+              <AppImage
                 src="/marketing.svg"
                 alt="Marketing Teams"
                 width={50}
@@ -276,7 +257,7 @@ export default function Home() {
           </div>
           <div className={styles.types}>
             <div className={styles.typeImage}>
-              <Image
+              <AppImage
                 src="/consultants.svg"
                 alt="Consultants"
                 width={50}
@@ -306,16 +287,15 @@ export default function Home() {
             </div>
             <div className={styles.featureDetails}>
               <div className={styles.featureDetail}>
-                <i className="fa-solid fa-check"></i>
+                <FaCheck />
                 <p>100 emails/month</p>
               </div>
               <div className={styles.featureDetail}>
-                <i
-                  className="fa-solid fa-check"></i>
+                <FaCheck />
                 <p>3 leads</p>
               </div>
               <div className={styles.featureDetail}>
-                <i className="fa-solid fa-check"></i>
+                <FaCheck />
                 <p>Basic tracking</p>
               </div>
             </div>
@@ -327,15 +307,15 @@ export default function Home() {
             </div>
             <div className={styles.featureDetails}>
               <div className={styles.featureDetail}>
-                <i className="fa-solid fa-check"></i>
+                <FaCheck />
                 <p>500 emails/month</p>
               </div>
               <div className={styles.featureDetail}>
-                <i className="fa-solid fa-check"></i>
+                <FaCheck />
                 <p>Unlimited leads</p>
               </div>
               <div className={styles.featureDetail}>
-                <i className="fa-solid fa-check"></i>
+                <FaCheck />
                 <p>Advanced tracking</p>
               </div>
             </div>
@@ -347,15 +327,15 @@ export default function Home() {
             </div>
             <div className={styles.featureDetails}>
               <div className={styles.featureDetail}>
-                <i className="fa-solid fa-check"></i>
+                <FaCheck />
                 <p>Unlimited emails</p>
               </div>
               <div className={styles.featureDetail}>
-                <i className="fa-solid fa-check"></i>
+                <FaCheck />
                 <p>Unlimited leads</p>
               </div>
               <div className={styles.featureDetail}>
-                <i className="fa-solid fa-check"></i>
+                <FaCheck />
                 <p>Team collaboration</p>
               </div>
             </div>
@@ -404,7 +384,7 @@ export default function Home() {
           <div className={styles.storyImageContainer}>
             <div className={styles.storyImageSection}>
               <div className={styles.storyImageHolder}>
-                <Image
+                <AppImage
                   src="/story2 (5).svg"
                   alt="Professionals"
                   width={50}
@@ -419,7 +399,7 @@ export default function Home() {
             </div>
             <div className={styles.storyImageSection}>
               <div className={styles.storyImageHolder}>
-                <Image
+                <AppImage
                   src="/story2 (3).svg"
                   alt="Professionals"
                   width={50}
@@ -434,7 +414,7 @@ export default function Home() {
             </div>
             <div className={styles.storyImageSection}>
               <div className={styles.storyImageHolder}>
-                <Image
+                <AppImage
                   src="/story2 (2).svg"
                   alt="Professionals"
                   width={50}
@@ -449,7 +429,7 @@ export default function Home() {
             </div>
             <div className={styles.storyImageSection}>
               <div className={styles.storyImageHolder}>
-                <Image
+                <AppImage
                   src="/story2 (1).svg"
                   alt="Professionals"
                   width={50}
@@ -464,7 +444,7 @@ export default function Home() {
             </div>
             <div className={styles.storyImageSection}>
               <div className={styles.storyImageHolder}>
-                <Image
+                <AppImage
                   src="/story2 (4).svg"
                   alt="Professionals"
                   width={50}

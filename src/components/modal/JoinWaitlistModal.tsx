@@ -2,8 +2,8 @@
 import React, { useRef, useState } from "react";
 import styles from "./styles.module.css";
 import axios from "axios";
-import toast from "react-hot-toast";
 import countryCodes from "@components/data/countryCodes.json";
+import { showCustomToast } from "@components/components/ui/CustomToast";
 
 export default function JoinWaitlistModal({
   isOpen,
@@ -54,18 +54,18 @@ export default function JoinWaitlistModal({
       );
 
       if (res.data && res.data.success !== false) {
-        toast.success(`${firstName} has joined waitlist successfully`);
+        showCustomToast(`${firstName} has joined waitlist successfully`, "success");
         onClose();
         setFirstName("");
         setEmail("");
         setPhone("");
         setReferralCode("");
       } else {
-        toast.error("Something went wrong. Please try again.");
+        showCustomToast("Something went wrong. Please try again.", "error");
       }
     } catch (error: any) {
       console.error(error);
-      toast.error(`Submission failed. ${error.message ?? "Check your network or input."}`);
+      showCustomToast(`Submission failed. ${error.message ?? "Check your network or input."}`, "error");
     } finally {
       setIsLoading(false);
     }

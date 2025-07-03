@@ -20,6 +20,9 @@
     max-width: 650px;
     position: relative;
     background: linear-gradient(159.19deg, #FFFFFF 66.96%, #DEEF9F 84.76%, #76C893 97.68%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .modal h2 {
@@ -123,8 +126,12 @@
     font-size: 15px;
   }
 
-  .form input {
+    .form {
     width: 70%;
+  }
+
+  .form input {
+    width: 100%;
   }
 }
 
