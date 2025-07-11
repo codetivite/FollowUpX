@@ -1,0 +1,34 @@
+@media (min-width: 320px) {
+  .chartWrapper {
+    width: 100%;
+    /* max-width: 700px; */
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    /* Tailwind gray-200 */
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+}
+
+@media (min-width: 425px) {
+  .chartWrapper {
+    width: 400px;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .chartWrapper {
+    width: 680px;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .chartWrapper {
+    width: 997px;
+    padding: 2rem;
+  }
+}

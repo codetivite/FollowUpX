@@ -1,0 +1,209 @@
+@media (min-width: 320px) {
+  .editNewEvent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 10px;
+    width: 100%;
+    align-items: center;
+    /* background-color: #ffffff; */
+  }
+
+  .editNewEvent .editNewEventHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 20px 10px;
+    gap: 100px;
+  }
+
+  .editNewEvent h1 {
+    font-family: Segoe UI;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 17.6px;
+    letter-spacing: 0px;
+  }
+
+  .editNewEvent .addEventDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    /* align-items: flex-start; */
+    background-color: #f2f2ea;
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px 10px;
+  }
+
+  .editNewEvent .addEventDetails h2 {
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 17.6px;
+    letter-spacing: 0px;
+  }
+
+  .editNewEvent .EventForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    padding: 0px 10px;
+  }
+
+  .editNewEvent .EventFormTab {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    /* align-items: flex-start; */
+  }
+
+  .editNewEvent .EventFormTab label {
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17.6px;
+    letter-spacing: 0px;
+  }
+
+  .editNewEvent .EventFormTab input,
+  .editNewEvent .EventFormTab select {
+    width: 100%;
+    border: 1px solid #00000040;
+    border-radius: 10px;
+    background: #D9D9D9;
+    color: #000;
+    height: 35px;
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17.6px;
+    letter-spacing: 0px;
+    outline: none;
+    padding: 20px;
+  }
+
+  .editNewEvent .EventFormTab textarea {
+    width: 100%;
+    border: 1px solid #00000040;
+    border-radius: 10px;
+    background: #D9D9D9;
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17.6px;
+    letter-spacing: 0px;
+    outline: none;
+    padding: 20px;
+  }
+
+  .editNewEvent .EventFormButton {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0px;
+  }
+
+  .editNewEvent .EventFormButton button:first-child {
+    background: #ffffff;
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .editNewEvent .EventFormButton button:last-child {
+    background: #4F46E5;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .editNewEvent .EventFormButton button:hover {
+    transform: scale(1.05);
+  }
+
+  .editNewEvent .EventFormButton button:active {
+    transform: scale(0.95);
+  }
+
+  .editNewEvent .EventFormButton button:first-child:hover {
+    background-color: #4f46e5c9;
+  }
+
+  .editNewEvent .EventFormButton button:last-child:hover {
+    background-color: #4e46e5c9;
+  }
+
+  .editNewEvent .EventFormButton button:first-child:active {
+    background-color: #4f46e5c9;
+  }
+
+  .editNewEvent .EventFormButton button:last-child:active {
+    background-color: #4e46e5c9;
+  }
+
+  .editNewEvent .EventFormButton button {
+    font-family: Segoe UI;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17.6px;
+    letter-spacing: 0px;
+  }
+
+  /* ============ general settings included settings =========== */
+  .editNewEvent .notificationPreferences {
+    padding: 0px 0px;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .editNewEvent {
+    padding: 40px 20px;
+  }
+
+    .editNewEvent h1 {
+    font-size: 32px;
+  }
+
+  .editNewEvent .addEventDetails {
+    width: 722px;
+    /* height: 806px; */
+    padding: 30px 20px;
+  }
+
+  .editNewEvent .addEventDetails h2 {
+    font-size: 22px;
+  }
+
+  .editNewEvent .EventForm {
+    padding: 0px 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+    .editNewEvent .editNewEventHeader {
+    width: 90%;
+    padding: 20px 10px;
+  }
+
+  .editNewEvent h1 {
+    font-size: 40px;
+  }
+
+  .editNewEvent .addEventDetails h2 {
+    font-size: 24px;
+  }
+}
