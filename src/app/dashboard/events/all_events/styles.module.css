@@ -1,0 +1,76 @@
+@media (min-width: 320px) {
+  .EventContainer {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 10px;
+    width: 100%;
+  }
+
+  .EventSection1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .EventSection1 h1 {
+    font-family: Segoe UI;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+
+  .newTask {
+    background: #4F46E5;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+    transition: transform 0.3s ease;
+  }
+
+  .newTask:hover {
+    background-color: #4e46e5c9;
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+  }
+
+  .newTask:active {
+    transform: scale(0.9);
+  }
+
+  .newTask span {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .EventContainer {
+    padding: 40px 40px;
+  }
+
+  .EventSection1 h1 {
+    font-size: 32px;
+  }
+
+  .newTask {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .newTask span {
+    display: inline;
+  }
+}
+
+@media (min-width: 1440px) {
+  .EventSection1 h1 {
+    font-size: 40px;
+  }
+}

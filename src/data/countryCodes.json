@@ -1,0 +1,8 @@
+[
+  { "name": "Nigeria", "dial_code": "+234" },
+  { "name": "United States", "dial_code": "+1" },
+  { "name": "United Kingdom", "dial_code": "+44" },
+  { "name": "Ghana", "dial_code": "+233" },
+  { "name": "Kenya", "dial_code": "+254" },
+  { "name": "South Africa", "dial_code": "+27" }
+]

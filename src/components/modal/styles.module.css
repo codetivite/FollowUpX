@@ -1,0 +1,143 @@
+@media screen and (min-width: 320px) {
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .modal {
+    background: white;
+    padding: 60px 20px;
+    /* border-radius: 12px; */
+    width: 90%;
+    max-width: 650px;
+    position: relative;
+    background: linear-gradient(159.19deg, #FFFFFF 66.96%, #DEEF9F 84.76%, #76C893 97.68%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal h2 {
+    font-family: Public Sans, sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 64px;
+    letter-spacing: 0px;
+    text-align: center;
+  }
+
+  .modal p {
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 22px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin-bottom: 30px;
+
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+
+  .form input,
+  .phoneInputGroup select {
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid #8DD193B8;
+    border-radius: 12px;
+  }
+
+    .phoneInputGroup {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .phoneInputGroup select {
+    max-width: 30%;
+  }
+
+  .phoneInputGroup input {
+    flex: 1;
+  }
+
+  .form button {
+    width: 125;
+    height: 45;
+    top: 395px;
+    left: 238px;
+    border-radius: 33px;
+    border: 1px solid #ffffff;
+    background: linear-gradient(262.46deg, #D9ED92 0.94%, #184E77 39.16%);
+    color: #FFFFFF;
+    font-family: Public Sans, sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17.6px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .form button:hover {
+    background: linear-gradient(262.46deg, #184E77 0.94%, #D9ED92 79.16%);
+    cursor: pointer;
+  }
+}
+
+/* media responsiveness 768px */
+@media screen and (min-width: 768px ) {
+  .modal {
+    background: linear-gradient(170.19deg, #FFFFFF 72.96%, #DEEF9F 80.76%, #76C893 97.68%);
+  }
+
+  .modal h2 {
+    font-size: 32px;
+  }
+
+  .modal p,
+  .form button {
+    font-size: 15px;
+  }
+
+    .form {
+    width: 70%;
+  }
+
+  .form input {
+    width: 100%;
+  }
+}
+
+/* media responsiveness 1024px */
+@media screen and (min-width: 1024px ) {
+  .modal h2 {
+    font-size: 40px;
+  }
+}

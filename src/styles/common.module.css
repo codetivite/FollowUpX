@@ -1,0 +1,129 @@
+/* src/styles/common.module.css */
+/* ========== Common Styles ================ */
+@media screen and (min-width: 320px) {
+    .signUpButton {
+    /* background: linear-gradient(to right, #F0F0F0, #A0A0A0); */
+    color: black;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 2px solid #BEDEA7;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 15px;
+  }
+
+    .primary {
+    background: linear-gradient(to bottom, #D9ED92, #168AAD);
+    color: black;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 15px;
+  }
+
+  .secondary:hover,
+  .small:hover,
+  .primary:hover {
+    background: linear-gradient(to right, #D9ED92, #2D91DD);
+  }
+
+    .secondary {
+    background: linear-gradient(to bottom, #D9ED92, #168AAD);
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #483463;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .small {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(to bottom, #D9ED92, #168AAD);
+    color: black;
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0px;
+    border-radius: 33px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100px;
+    height: inherit;
+  }
+  
+}
+
+/* ========== 768px responsiveness ================ */
+@media screen and (min-width: 768px) {
+      .signUpButton {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+    .primary {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+    .secondary {
+    padding: 8px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 20px;
+  }
+}
+
+/* ========== 1024px responsiveness ================ */
+@media screen and (min-width: 1024px) {
+    .signUpButton {
+    font-size: 15px;
+  }
+
+    .primary {
+    font-size: 15px;
+  }
+
+    .secondary {
+    font-size: 15px;
+  }
+}
+
+/* ========== 1440px responsiveness ================ */
+@media screen and (min-width: 1440px) {
+  .signUpButton {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .primary {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .secondary {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .small {
+    font-size: 22px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    padding: 10px 20px;
+    width: 190px;
+  }
+}

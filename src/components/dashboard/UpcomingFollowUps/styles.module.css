@@ -1,0 +1,194 @@
+@media (min-width: 320px) {
+  .updateContainers {
+    background: white;
+    border-radius: 1rem;
+    padding: 20px 0px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 300px;
+  }
+
+  .updateSection1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 1rem; */
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+  .updateSection1 h2 {
+    font-family: Segoe UI;
+    font-weight: 700;
+    font-size: 17.38px;
+    line-height: 24px;
+    letter-spacing: 0px;
+
+  }
+
+  .newTask {
+    background: linear-gradient(265.16deg, #B5E48C 0.87%, #184E77 99.13%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+    transition: transform 0.3s ease;
+  }
+
+  .newTask:hover {
+    background: linear-gradient(265.16deg,  #184E77 0.87%, #B5E48C 99.13%);
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+  }
+
+  .newTask:active {
+    transform: scale(0.9);
+  }
+
+  .newTask span {
+    display: none;
+  }
+
+  .updateSection2 {
+    overflow-x: auto;
+    width: 100%;
+    padding: 10px 10px;
+  }
+
+  .updateTable {
+    /* font-style: italic; */
+    font-size: 14px;
+    width: 100%;
+    height: 450px;
+  }
+
+
+  .updateTable thead {
+    font-family: Segoe UI, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18.4px;
+    letter-spacing: 0px;
+    color: #6C757D;
+    text-align: left;
+  }
+
+  .updateTable thead th {
+    padding: 10px 10px;
+    width: 100px;
+  }
+
+  .updateTable .body td {
+    font-family: Segoe UI, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21.6px;
+    letter-spacing: 0px;
+    text-align: left;
+    padding: 0 0.5rem;
+    /* white-space: normal;
+    word-break: break-word;
+    max-width: 120px; */
+  }
+
+
+  .updateTable .body tr {
+    border-top: 1px solid #E9ECEF
+  }
+
+  .sendBtn {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #e5e7eb;
+    background: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+
+  /* Priority tags */
+  .priorityHigh {
+    background: #FECACA;
+    color: #B91C1C;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .priorityMedium {
+    background: #FEF3C7;
+    color: #92400E;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .priorityLow {
+    background: #D1FAE5;
+    color: #065F46;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  /* Status tags */
+  .statusPending {
+    background: #FEF3C7;
+    color: #92400E;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .statusOverdue {
+    background: #FECACA;
+    color: #B91C1C;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .statusSent {
+    background: #D1FAE5;
+    color: #065F46;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .updateContainers {
+    width: 633px;
+    height: 593px;
+    border-radius: 10px;
+  }
+
+  .newTask span {
+    display: block;
+  }
+}
+
+@media (min-width: 1440px) {
+  .updateContainers {
+    width: 633px;
+    height: 593px;
+    border-radius: 10px;
+  }
+
+  .updateSection2 {
+    overflow-x: hidden;
+    /* width: inherit; */
+    width: 593;
+    height: 499;
+    top: 74.4px;
+    left: 20px;
+  }
+
+  .updateTable {
+    width: 615px;
+  }
+
+  .updateTable thead th,
+  .updateTable td {
+    width: 105px;
+  }
+}

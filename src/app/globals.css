@@ -14,12 +14,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-  --background: #ffffff;
-  --foreground: #000000;
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --header-bg: #f8f8f8;
-  --nav-bg: #333333;
+    --background: #ffffff;
+    --foreground: #000000;
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --header-bg: #f8f8f8;
+    --nav-bg: #333333;
   }
 }
 
@@ -39,12 +39,16 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
   font-family: "SF UI Display-Regular", Helvetica;
-    padding: 0;
+  padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
@@ -55,4 +59,87 @@ body {
 
 .mainNav {
   background-color: var(--nav-bg);
+}
+
+
+
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Right column fills the rest of the space */
+.dashboard-main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+  min-height: 100vh;
+}
+
+@media (min-width: 320px) {
+  .auth-content {
+  background: linear-gradient(159.19deg, #FFFFFF 60.96%, #DEEF9F 84.76%, #76C893 97.68%);
+}
+
+  /* Header styles */
+  .dashboard-main>header {
+    background: #f7f7f7;
+    border-bottom: 1px solid #eee;
+    padding: 40px 0px;
+  }
+
+  /* Main content area */
+  .dashboard-content {
+    flex: 1;
+    padding: 20px 10px;
+    background: #f7f7f7;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+  }
+
+}
+
+
+
+/* Footer styles */
+.dashboard-main>footer {
+  background: #fff;
+  border-top: 1px solid #eee;
+  /* padding: 1rem; */
+}
+
+
+@media (min-width: 425px) {
+
+  /* Sidebar */
+  .dashboard-container>aside {
+    width: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .auth-content {
+  background: linear-gradient(165.19deg, #FFFFFF 68.96%, #DEEF9F 74.76%, #76C893 97.68%);
+}
+
+    .dashboard-content {
+    padding: 20px 0px;
+  }
+
+  /* Sidebar always takes up fixed width and full height */
+  .dashboard-container>aside {
+    width: 300px;
+    /* adjust to your preferred width */
+    background: #F7F7F7;
+    border-right: 1px solid #ddd;
+    flex-shrink: 0;
+  }
 }

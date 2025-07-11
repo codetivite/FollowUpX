@@ -1,0 +1,125 @@
+@media (min-width: 320px) {
+
+  .EventSection2 {
+    overflow-x: auto;
+    width: 300px;
+    padding: 10px 10px;
+    background-color: #dcdcdc;
+    border-radius: 25px;
+  }
+
+  .EventTable {
+    /* font-style: italic; */
+    font-size: 14px;
+    width: 100%;
+    height: 450px;
+  }
+
+  .EventTable .EventTableHead {
+    font-family: Segoe UI, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18.4px;
+    letter-spacing: 0px;
+    color: #000000;
+    text-align: left;
+    padding: 10px 0;
+  }
+
+  .EventTable .EventTableHead th {
+    padding: 10px 10px;
+    width: 100px;
+  }
+
+  .EventTable .EventTableBody td {
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    vertical-align: middle;
+    padding: 0 10px;
+  }
+
+  .EventTable .EventTableBody tr {
+    border-top: 1px solid #07070780
+  }
+
+
+  .EventTable .EventTableBody tr {
+    margin-bottom: 1rem;
+  }
+
+  .statusActive {
+    background: #17C700;
+    color: #ffffff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .statusPaused {
+    background: #D59A2D;
+    color: #ffffff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .statusCompleted {
+    background: #F2F2F2;
+    color: #000000;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+  }
+
+  .EventActions {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 10px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 375px) {
+  .EventSection2 {
+    width: 350px;
+  }
+
+  .EventTable {
+    height: 500px;
+  }
+}
+
+@media (min-width: 425px) {
+  .EventSection2 {
+    width: 400px;
+  }
+
+  .EventTable {
+    height: 500px;
+  }
+}
+
+@media (min-width: 768px) {
+  .EventSection2 {
+    width: 100%;
+    padding: 30px 10px;
+  }
+
+  .EventTable .EventTableHead {
+    font-size: 16px;
+  }
+
+  .EventTable .EventTableBody td {
+    font-size: 16px;
+  }
+
+  .EventTable {
+    height: 500px;
+  }
+
+  .EventTable .EventTableHead th {
+    padding: 10px 10px;
+    width: auto;
+  }
+}

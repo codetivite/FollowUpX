@@ -1,0 +1,176 @@
+@media (min-width: 320px) {
+  .header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* gap: 50px; */
+  }
+
+  /* Menu button hidden on desktop */
+  .menuBtn {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    margin: 0 .5rem;
+    cursor: pointer;
+  }
+
+  .headerSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 5px;
+  }
+
+  .searchBar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    border: 1px solid #56397DCC;
+    height: 35px;
+    width: 180px;
+    border-radius: 25px;
+  }
+
+  .searchIcon {
+    font-size: .8rem;
+    margin: 0 5px;
+  }
+
+  .search {
+    font-family: Segoe UI, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17.6px;
+    letter-spacing: 0px;
+    width: 100%;
+    height: inherit;
+    outline: none;
+  }
+
+  .userProfile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 30%;
+  }
+
+  .notification {
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: #D9ED92;
+    padding: 10px;
+    border-radius: 30px;
+  }
+
+  .notification:active {
+    transform: scale(0.9);
+  }
+
+  .profile {
+    width: 30px;
+  }
+
+      .logoWrapper {
+    display: none;
+  }
+}
+
+@media (min-width: 425px) {
+
+  .headerSection {
+    padding: 0px 0px;
+    gap: 10px;
+  }
+
+  .menuBtn {
+    font-size: 1.1rem;
+    margin-right: 1rem;
+  }
+
+  .searchBar {
+    width: 280px;
+  }
+
+  .searchIcon,
+  .notification {
+    font-size: 1.1rem;
+    margin: 0 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    gap: 50px;
+  }
+
+  .menuBtn {
+    font-size: 1.5rem;
+    margin: 0 1.5rem;
+  }
+
+  .headerSection {
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .searchBar {
+    width: 50%;
+    height: 40px;
+    border-radius: 25px;
+    gap: 20px;
+  }
+
+  .searchIcon {
+    font-size: 1.3rem;
+    margin: 0 20px;
+  }
+
+  .notification {
+    font-size: 1.5rem;
+  }
+
+  .userProfile {
+    justify-content: space-around;
+    gap: 30px;
+  }
+
+  .profile {
+    width: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menuBtn {
+    display: none;
+  }
+
+  .logoWrapper {
+    display: block;
+  }
+
+  .headerSection {
+    justify-content: space-around;
+    gap: 10px;
+  }
+
+  .searchBar {
+    width: 45%;
+    border-radius: 25px;
+  }
+
+  .searchIcon,
+  .notification {
+    font-size: 1.3rem;
+    margin: 0 8px;
+  }
+}
