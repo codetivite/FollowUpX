@@ -1,0 +1,188 @@
+@media (min-width: 320px) {
+  .eventDetailsPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 10px;
+  }
+
+  .eventDetailsPage .eventDetailsHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 60px;
+    padding: 20px 0px;
+    width: 100%;
+  }
+
+  .eventDetailsPage .eventDetailsHeaderContent button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17.6px;
+    letter-spacing: 0px;
+  }
+
+  .eventDetailsPage .eventDetailsHeaderContent button:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  .eventDetailsPage .eventDetailsHeaderContent button:active {
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+  }
+
+  /* .eventDetailsPage .eventDetailsHeaderContent button span {
+    display: none;
+  } */
+
+  .eventDetailsPage .eventDetailsHeaderContent .editButton {
+    color: #Ffffff;
+    background-color: #4F46E5;
+  }
+
+  .eventDetailsPage .eventDetailsHeaderContent .editButton:hover {
+    background-color: #4e46e5c9;
+  }
+
+  .eventDetailsPage .eventDetailsHeaderContent .deleteButton {
+    color: #Ffffff;
+    background-color: #B30000;
+  }
+
+  .eventDetailsPage .eventDetailsHeaderContent .deleteButton:hover {
+    background-color: #b30000d3;
+  }
+
+  .eventDetailsPage .eventDetailsHeaderContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0px 20px;
+  }
+
+  .eventDetailsPage h1 {
+    font-family: Segoe UI;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 47.6px;
+    letter-spacing: 0px;
+  }
+
+  .eventDetailsPage .eventDetailsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 25px;
+    padding: 20px 10px;
+    background: #f8f8f6;
+  }
+
+  .eventDetailsPage .eventDetailsContainer h2 {
+    font-family: Segoe UI;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 17.6px;
+    letter-spacing: 0px;
+  }
+
+  .eventDetailsPage .eventDetails1 h3,
+  .eventDetailsPage .eventDetails2 h3,
+  .eventDetailsPage .eventDetails3 h3,
+  .eventDetailsPage .eventDetails4 h3,
+  .eventDetailsPage .eventDetails5 h3 {
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 17.6px;
+    letter-spacing: 0px;
+    padding: 10px 0px;
+    color: #07070780;
+  }
+
+  .eventDetailsPage .eventDetails1,
+  .eventDetailsPage .eventDetails3,
+  .eventDetailsPage .eventDetails2,
+  .eventDetailsPage .eventDetails4,
+  .eventDetailsPage .eventDetails5 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
+  .eventDetailsPage .eventDetails1 p,
+  .eventDetailsPage .eventDetails2 p,
+  .eventDetailsPage .eventDetails3 p,
+  .eventDetailsPage .eventDetails4 p,
+  .eventDetailsPage .eventDetails5 p {
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 17.6px;
+    letter-spacing: 0px;
+    /* text-align: right; */
+  }
+
+}
+
+@media (min-width: 768px) {
+  .eventDetailsPage h1 {
+    font-size: 32px;
+  }
+
+  .eventDetailsPage .eventDetailsHeader {
+    justify-content: space-around;
+
+  }
+
+  .eventDetailsPage .eventDetailsHeaderContent {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .eventDetailsPage .eventDetails1 h2 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .eventDetailsPage {
+    gap: 60px;
+  }
+
+  .eventDetailsPage .h1 {
+    font-size: 40px;
+  }
+
+  .eventDetailsPage .eventDetailsContainer {
+    width: 866px;
+  }
+
+  .eventDetailsPage .eventDetails1,
+  .eventDetailsPage .eventDetails2,
+  .eventDetailsPage .eventDetails3,
+  .eventDetailsPage .eventDetails4,
+  .eventDetailsPage .eventDetails5,
+  .eventDetailsPage .eventDetails6,
+  .eventDetailsPage .eventDetails7 {
+    padding: 20px 60px;
+  }
+}

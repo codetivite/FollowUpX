@@ -1,0 +1,59 @@
+/* ========== 320px responsiveness ================ */
+@media screen and (min-width: 320px) {
+  .logoContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 5px;
+    padding: 20px 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .logoContainer .logo {
+    width: 25px;
+    height: auto;
+  }
+
+  .logoContainer .logoText {
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+  }
+}
+
+/* ========== 1024px responsiveness ================ */
+@media screen and (min-width: 1024px) {
+  .logoContainer {
+
+    gap: 15px;
+    padding: 20px 0px;
+
+  }
+
+  .logoContainer .logo {
+    width: 30px;
+    /* Adjust the width as needed */
+  }
+
+  .logoContainer .logoText {
+    width: 129px;
+  }
+}
+
+/* ========== 1440px responsiveness ================ */
+@media screen and (min-width: 1440px) {
+  .logoContainer {
+    gap: 20px;
+    padding: 20px 30px;
+  }
+
+  .logoContainer .logo {
+    width: 35px;
+    /* Adjust the width as needed */
+  }
+
+  .logoContainer .logoText {
+    width: 159px;
+  }
+}
