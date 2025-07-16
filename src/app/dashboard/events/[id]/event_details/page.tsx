@@ -8,13 +8,9 @@ import { FiEdit } from "react-icons/fi";
 import { FiTrash2 } from "react-icons/fi";
 import BackArrow from "@components/components/BackArrow/BackArrow";
 
-export default function EventDetailsPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default function EventDetailsPage() {
     const router = useRouter(); 
-  const eventId = parseInt(params.id, 10);
+  const eventId = parseInt("", 10);
   const event = mockEvents.find((l) => l.id === eventId);
 
   function handleDelete() {
