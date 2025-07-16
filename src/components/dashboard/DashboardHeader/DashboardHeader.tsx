@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./styles.module.css";
-import Image from "next/image";
 import Logo from "@components/components/logo/Logo";
 import React from "react";
 import AppImage from "@components/components/AppImage/AppImagee";

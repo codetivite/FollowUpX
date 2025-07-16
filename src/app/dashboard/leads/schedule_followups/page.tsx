@@ -40,6 +40,8 @@ export default function ScheduleFollowUps({
   }
 
   function validate() {
+    if(errors){}
+    
     const validationErrors: { [key: string]: string } = {};
     if (!formData.date.trim()) validationErrors.date = "Date is required.";
     if (!formData.time.trim()) validationErrors.time = "Time is required.";

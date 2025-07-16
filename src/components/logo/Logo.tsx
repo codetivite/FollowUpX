@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import styles from "./styles.module.css";
 import AppImage from "@components/components/AppImage/AppImagee";
 

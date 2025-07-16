@@ -2,7 +2,6 @@
 
 import styles from "./styles.module.css";
 import React from "react";
-import Link from "next/link";
 import { mockData } from "@components/mock/followUp";
 
 

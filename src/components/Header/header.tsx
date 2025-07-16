@@ -2,8 +2,8 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./styles.module.css";
 import Logo from "../logo/Logo";
-import WaitlistButton from "../headerButtons/WaitlistButton";
-import LoginButton from "../headerButtons/LoginButton";
+//import WaitlistButton from "../headerButtons/WaitlistButton";
+//import LoginButton from "../headerButtons/LoginButton";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -12,7 +12,8 @@ type Props = {
   variant?: "default" | "minimal";
 };
 
-export default function Header({ onJoinClick, variant = "default" }: Props) {
+//export default function Header({ onJoinClick, variant = "default" }: Props) {
+export default function Header({ variant = "default" }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
 
@@ -37,9 +38,10 @@ export default function Header({ onJoinClick, variant = "default" }: Props) {
         <Logo />
         {variant === "default" && (
           <div className={styles.navLinks}>
-            <li><Link href="">Products</Link></li>
-            <li><Link href="/#features">Features</Link></li>
-            <li><Link href="">Demo</Link></li>
+            {/* <li><Link href="">Products</Link></li> */}
+            {/* <li><Link href="/#features">Features</Link></li> */}
+            {/* <li><Link href="">Demo</Link></li> */}
+            <li><Link href="/contact">Contact</Link></li>
             <li><Link href="/#about">About</Link></li>
           </div>
         )}
@@ -48,8 +50,8 @@ export default function Header({ onJoinClick, variant = "default" }: Props) {
       {variant === "default" && (
         <>
           <div className={styles.headerButtons}>
-            <WaitlistButton onClick={onJoinClick} />
-            <LoginButton />
+            {/* <WaitlistButton onClick={onJoinClick} /> */}
+            {/* <LoginButton /> */}
           </div>
 
           <button className={styles.menuBtn} onClick={() => setIsOpen(true)}>
@@ -69,12 +71,12 @@ export default function Header({ onJoinClick, variant = "default" }: Props) {
                   <FaTimes />
                 </button>
                 <ul className={styles.drawerLinks}>
-                  <li><Link href="">Products</Link></li>
-                  <li><Link href="/#features">Features</Link></li>
-                  <li><Link href="">Demo</Link></li>
+                  {/* <li><Link href="">Products</Link></li>
+                  <li><Link href="/#features">Features</Link></li> */}
+                  <li><Link href="/contact">Contact</Link></li>
                   <li><Link href="/#about">About</Link></li>
-                  <li><WaitlistButton onClick={onJoinClick} /></li>
-                  <li><LoginButton /></li>
+                  {/* <li><WaitlistButton onClick={onJoinClick} /></li> */}
+                  {/* <li><LoginButton /></li> */}
                 </ul>
               </div>
             </div>

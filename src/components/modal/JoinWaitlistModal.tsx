@@ -63,9 +63,14 @@ export default function JoinWaitlistModal({
       } else {
         showCustomToast("Something went wrong. Please try again.", "error");
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(error);
-      showCustomToast(`Submission failed. ${error.message ?? "Check your network or input."}`, "error");
+
+      if (error instanceof Error) {
+        showCustomToast(`Submission failed. ${error?.message ?? "Check your network or input."}`, "error");
+      }else {
+        showCustomToast(`Submission failed. Check your network or input.`, "error");
+      }
     } finally {
       setIsLoading(false);
     }
@@ -124,7 +129,7 @@ export default function JoinWaitlistModal({
             onChange={(e) => setReferralCode(e.target.value)}
           />
           <p>
-            We respect your privacy. Your email will only be used for product
+            We respect your privacy. Your email will only be to contact you for product
             updates.
           </p>
           <button type="submit" disabled={!isFormValid || isLoading}>

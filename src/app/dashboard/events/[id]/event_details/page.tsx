@@ -2,7 +2,6 @@
 
 import styles from "./styles.module.css";
 import React from "react";
-import Link from "next/link";
 import { mockEvents } from "@components/mock/event";
 import { notFound, useRouter } from "next/navigation";
 import { FiEdit } from "react-icons/fi";

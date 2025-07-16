@@ -1,16 +1,15 @@
 "use client"; // Required for interactivity
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "../styles.module.css";
 import Link from "next/link";
 import AppImage from "@components/components/AppImage/AppImagee";
 import InputField from "@components/components/Form/InputField";
 import CheckboxField from "@components/components/Form/CheckboxField";
 import { useRouter } from "next/navigation";
-import axios from "axios";
 import { showCustomToast } from "@components/components/ui/CustomToast";
 
-export default function signUpPage() {
+export default function SignUpPage() {
   const [agree, setAgree] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [email, setEmail] = useState("");

@@ -1,9 +1,8 @@
 "use client"; // Required for interactivity
 
 import React from "react";
-import Image from "next/image";
 import styles from "./styles.module.css";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import WaitlistButton from "@components/components/headerButtons/WaitlistButton";
 import FAQSection from "@components/components/FAQ/FAQ";
 import JoinWaitlistModal from "@components/components/modal/JoinWaitlistModal";
@@ -13,7 +12,7 @@ import AppImage from "@components/components/AppImage/AppImagee";
 import { FaCheck } from "react-icons/fa";
 
 export default function Home() {
-  const router = useRouter();
+  //const router = useRouter();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -22,11 +21,6 @@ export default function Home() {
 
   return (
     <>
-      {/* <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      /> */}
-
       {/* landing page */}
       <section className={styles.landingMain}>
         <div className={styles.hero}>
@@ -38,8 +32,8 @@ export default function Home() {
               Save time, boost engagement, and close more deals effortlessly.
             </p>
             <div className={styles.buttons}>
-              <WaitlistButton variant="secondary" isLive={false} onClick={openModal} />
-              <button className={styles.demo}>Request Demo</button>
+              {/* <WaitlistButton variant="secondary" isLive={false} onClick={openModal} /> */}
+              {/* <button className={styles.demo}>Request Demo</button> */}
             </div>
           </div>
           <div className={styles.imageContainer}>
@@ -373,7 +367,7 @@ export default function Home() {
           <div className={styles.storyTextContainer}>
             <h2 className={styles.storyTitle}>Our Story</h2>
             <p className={styles.storyText}>
-              At FollowUpX, we're a team of passionate individuals dedicated to
+              At FollowUpX, we`&apos;`re a team of passionate individuals dedicated to
               transforming the way businesses connect with their leads. Our
               journey began with a shared vision: to create an AI-powered
               assistant that not only automates follow-up emails but also

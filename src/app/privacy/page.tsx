@@ -48,7 +48,7 @@ export default function PrivacyPolicy() {
           <h2>Contact Us</h2>
           <p>
             If you have any questions or concerns about this Privacy Policy,
-            please contact us at privacy@followupx.com.
+            please contact us!
           </p>
         </div>
       </div>
