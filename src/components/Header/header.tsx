@@ -37,7 +37,7 @@ export default function Header({ onJoinClick, variant = "default" }: Props) {
         <Logo />
         {variant === "default" && (
           <div className={styles.navLinks}>
-            <li><Link href="">Products</Link></li>
+            <li><Link href="/integrations">Integration</Link></li>
             <li><Link href="/#features">Features</Link></li>
             <li><Link href="">Demo</Link></li>
             <li><Link href="/#about">About</Link></li>
@@ -69,7 +69,7 @@ export default function Header({ onJoinClick, variant = "default" }: Props) {
                   <FaTimes />
                 </button>
                 <ul className={styles.drawerLinks}>
-                  <li><Link href="">Products</Link></li>
+                  <li><Link href="/integrations">Integration</Link></li>
                   <li><Link href="/#features">Features</Link></li>
                   <li><Link href="">Demo</Link></li>
                   <li><Link href="/#about">About</Link></li>

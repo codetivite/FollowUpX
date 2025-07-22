@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import React from "react";
 import styles from "@components/styles/FormStyles.module.css";
 import InputField from "@components/components/Form/InputField";
 import SelectField from "@components/components/Form/SelectField";

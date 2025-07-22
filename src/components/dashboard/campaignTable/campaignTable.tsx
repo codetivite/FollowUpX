@@ -47,10 +47,10 @@ export default function CampaignTable() {
                 <td>{f.startDate}</td>
                 <td>{f.endDate}</td>
                 <td className={styles.campaignActions}>
-                  <Link href={`/dashboard/campaign/${f.id}/campaign_details`}>
+                  <Link href="">
                     <AiOutlineEye />
                   </Link>
-                  <Link href={`/dashboard/campaign/${f.id}/edit_campaign`}>
+                  <Link href="">
                     <FiEdit />
                   </Link>
                   <button onClick={() => handleDelete(f.id)}>
