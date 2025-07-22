@@ -1,8 +1,8 @@
 "use client";
 
-import styles from "./styles.module.css";
 import React from "react";
-import Link from "next/link";
+import { use } from 'react';
+import styles from "./styles.module.css";
 import { mockEvents } from "@components/mock/event";
 import { notFound, useRouter } from "next/navigation";
 import { FiEdit } from "react-icons/fi";
@@ -12,10 +12,12 @@ import BackArrow from "@components/components/BackArrow/BackArrow";
 export default function EventDetailsPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-    const router = useRouter(); 
-  const eventId = parseInt(params.id, 10);
+  const { id } = use(params); // ✅ unwrap the Promise
+  const router = useRouter(); 
+
+  const eventId = parseInt(id, 10);
   const event = mockEvents.find((l) => l.id === eventId);
 
   function handleDelete() {

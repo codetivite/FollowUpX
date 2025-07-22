@@ -50,11 +50,11 @@
 
   .eventDetailsPage .eventDetailsHeaderContent .editButton {
     color: #Ffffff;
-    background-color: #4F46E5;
+    background: linear-gradient(273.31deg, #B5E48C 0.49%, #184E77 26.19%);
   }
 
   .eventDetailsPage .eventDetailsHeaderContent .editButton:hover {
-    background-color: #4e46e5c9;
+    background: linear-gradient(273.31deg, #184E77 0.49%, #B5E48C 26.19%);
   }
 
   .eventDetailsPage .eventDetailsHeaderContent .deleteButton {
