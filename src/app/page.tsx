@@ -22,10 +22,6 @@ export default function Home() {
 
   return (
     <>
-      {/* <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      /> */}
 
       {/* landing page */}
       <section className={styles.landingMain}>

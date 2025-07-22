@@ -14,7 +14,6 @@ import DashboardHeader from "@components/components/dashboard/DashboardHeader/Da
 import DashboardSidebar from "@components/components/dashboard/DashboardSidebar/DashboardSidebar";
 
 import "./globals.css";
-import "@components/icons/fontawesome";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
