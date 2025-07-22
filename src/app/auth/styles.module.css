@@ -31,6 +31,7 @@
     font-size: 24px;
     line-height: 100%;
     letter-spacing: 0%;
+    color: #ffffff;
   }
 
   .loginContainer .loginHeader p {
@@ -39,7 +40,7 @@
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0%;
-    color: #000000;
+    color: #ffffff;
   }
 
   .loginContainer .loginForm {
@@ -48,6 +49,7 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+
   }
 
   .loginContainer .formFields {
@@ -65,7 +67,7 @@
     font-size: 14px;
     line-height: 100%;
     letter-spacing: 0%;
-    color: #000000;
+    color: #ffffff;
   }
 
   .loginContainer .formFields input {
@@ -86,6 +88,7 @@
     letter-spacing: 0%;
     position: absolute;
     right: 10px;
+    color: #ffffff;
   }
 
   .loginContainer .formFields .passwordField .forgotPasswordLink:hover {
@@ -99,6 +102,7 @@
     padding: 0 8px;
     width: 100%;
     margin-bottom: 10px;
+    color: #ffffff;
   }
 
   .loginContainer .loginButton {
@@ -155,6 +159,7 @@
     line-height: 100%;
     letter-spacing: 0%;
     border: 1px solid #D9D9D9;
+    color: #ffffff;
     width: 100%;
     height: 32px;
   }
@@ -170,6 +175,7 @@
     font-size: 14px;
     line-height: 100%;
     letter-spacing: 0%;
+    color: #ffffff;
   }
 
   .loginContainer .registerLinks .registerLink {
@@ -179,6 +185,62 @@
   .loginContainer .loginSection2 {
     display: none;
   }
+
+  .loginContainer {
+    position: relative;
+    background: url("/auth_image.svg") center/cover no-repeat;
+  }
+
+  .loginContainer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    /* Dark overlay */
+    z-index: 0;
+  }
+
+  .loginContainer .loginSection1 {
+    position: relative;
+    z-index: 1;
+  }
+
+  .passwordWrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  .eyeButton {
+    position: absolute;
+    right: 10px;
+    top: 38px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 0.6s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
 }
 
 @media (min-width: 425px) {
@@ -224,26 +286,35 @@
     padding: 0px 0px;
   }
 
-    .loginContainer .loginHeader h2 {
+
+  .loginContainer {
+    background: none;
+  }
+
+  .loginContainer::before {
+    display: none;
+  }
+
+  .loginContainer .loginHeader h2 {
     font-size: 32px;
   }
 
   .loginContainer .loginSection1 {
     gap: 10px;
-        width: 50%;
-        padding: 0px 30px;
+    width: 50%;
+    padding: 0px 30px;
   }
 
-    .loginContainer .loginForm {
+  .loginContainer .loginForm {
     gap: 0px;
   }
 
-    .loginContainer .formFields {
+  .loginContainer .formFields {
     gap: 0px;
     padding: 0 8px;
   }
 
-    .loginContainer .registerLinks {
+  .loginContainer .registerLinks {
     padding: 25px 0px;
     margin-top: 0px;
   }
@@ -259,6 +330,16 @@
     max-width: 600px;
     margin: 0 auto;
   }
+
+
+  .loginContainer .loginHeader p,
+  .loginContainer .registerLinks p,
+  .loginContainer .registerLinks .socialButtons button,
+  .loginContainer .formFields .passwordField .forgotPasswordLink,
+  .loginContainer .formFields label,
+  .loginContainer .loginHeader h2 {
+    color: #000000;
+  }
 }
 
 
@@ -270,15 +351,15 @@
     padding: 0 100px;
   }
 
-      .loginContainer .loginForm {
+  .loginContainer .loginForm {
     gap: 10px;
   }
 
-    .loginContainer .formFields {
+  .loginContainer .formFields {
     gap: 10px;
   }
 
-    .loginContainer .registerLinks {
+  .loginContainer .registerLinks {
     padding: 30px 0px;
   }
 

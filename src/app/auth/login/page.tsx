@@ -1,6 +1,6 @@
 "use client"; // Required for interactivity
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "../styles.module.css";
 import Link from "next/link";
 import AppImage from "@components/components/AppImage/AppImagee";
@@ -9,15 +9,18 @@ import CheckboxField from "@components/components/Form/CheckboxField";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { showCustomToast } from "@components/components/ui/CustomToast";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function LoginPage() {
   const [agree, setAgree] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-    const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const newErrors: { [key: string]: string } = {};
@@ -31,12 +34,45 @@ export default function LoginPage() {
       return;
     }
 
-    // You could show a toast here
-    showCustomToast("Logged in successfully", "success");
+    try {
+      setIsLoading(true);
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1/auth/login`,
+        {
+          email,
+          password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-    // Navigate to login
-    router.push("/dashboard");
+      if (response.status === 200) {
+        showCustomToast("Login successful!", "success");
+
+        // Optionally store token or user data
+        localStorage.setItem("token", response.data.token);
+
+        // Redirect to dashboard
+        router.push("/dashboard");
+      } else {
+        showCustomToast("Login failed. Please try again.", "error");
+      }
+    } catch (error: any) {
+      console.error("Login error:", error);
+      const message =
+        error.response?.data?.msg ||
+        error.response?.data?.error ||
+        "An unexpected error occurred";
+      showCustomToast(`Login failed: ${message}`, "error");
+    } finally {
+      setIsLoading(false);
+    }
   };
+
+  const isFormValid = email && password;
 
   return (
     <>
@@ -55,9 +91,8 @@ export default function LoginPage() {
                 placeholder="Enter your email"
                 required
                 value={email}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setEmail(e.target.value)
-                }
+                onChange={(e) => setEmail(e.target.value)}
+                error={errors.email}
               />
               <div className={styles.passwordField}>
                 <Link
@@ -66,17 +101,26 @@ export default function LoginPage() {
                 >
                   Forgot Password?
                 </Link>
-                <InputField
-                  type="password"
-                  name="password"
-                  label="Password"
-                  placeholder="Enter your password"
-                  required
-                  value={password}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    setPassword(e.target.value)
-                  }
-                />
+                {/* Password Field */}
+                <div className={styles.passwordWrapper}>
+                  <InputField
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    label="Password"
+                    placeholder="Enter your password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    error={errors.password}
+                  />
+                  <button
+                    type="button"
+                    className={styles.eyeButton}
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
               </div>
             </div>
             <div className={styles.checkboxContainer}>
@@ -88,8 +132,18 @@ export default function LoginPage() {
                 error={errors.agree}
               />
             </div>
-            <button type="submit" className={styles.loginButton}>
-              Login
+            <button
+              type="submit"
+              className={styles.loginButton}
+              disabled={!isFormValid || isLoading}
+            >
+              {isLoading ? (
+                <>
+                  <span className={styles.spinner}></span> Logging in...
+                </>
+              ) : (
+                "Login"
+              )}
             </button>
           </form>
           <div className={styles.registerLinks}>
@@ -114,7 +168,10 @@ export default function LoginPage() {
               </button>
             </div>
             <p>
-              Don't have an account? <Link href="/auth/signUp" className={styles.registerLink}>Sign Up</Link>
+              Don't have an account?{" "}
+              <Link href="/auth/signUp" className={styles.registerLink}>
+                Sign Up
+              </Link>
             </p>
           </div>
         </div>
