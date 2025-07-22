@@ -3,12 +3,10 @@
 import React from "react";
 import { useState } from "react";
 import InputField from "@components/components/Form/InputField";
-import SelectField from "@components/components/Form/SelectField";
-import TextAreaField from "@components/components/Form/TestAreaField";
 import BackArrow from "@components/components/BackArrow/BackArrow";
 import styles from "@components/styles/FormStyles.module.css";
 
-export default function AddLeads() {
+export default function EditLeads() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",

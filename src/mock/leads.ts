@@ -6,6 +6,7 @@ export const mockLeads = [
     email: "sarah.johnson@example.com",
     phone: "+1 (555) 123-4567",
     lastInteraction: "2024-06-25",
+    status: "New",
     followUpSuggestion: "Call to discuss proposal",
   },
   {
@@ -14,6 +15,7 @@ export const mockLeads = [
     email: "david.rodriguez@example.com",
     phone: "+1 (555) 987-6543",
     lastInteraction: "2024-06-20",
+    status: "New",
     followUpSuggestion: "Send product demo",
   },
   {
@@ -22,6 +24,7 @@ export const mockLeads = [
     email: "emily.thompson@example.com",
     phone: "+1 (555) 111-2222",
     lastInteraction: "2024-06-18",
+    status: "Contacted",
     followUpSuggestion: "Follow up on contract",
   },
   {
@@ -30,6 +33,7 @@ export const mockLeads = [
     email: "paul(mary)@example.com",
     phone: "+1 (555) 111-2314",
     lastInteraction: "2024-06-18",
+    status: "Followup_scheduled",
     followUpSuggestion:
       "Follow up with a personalized email about their recent equiry",
   },

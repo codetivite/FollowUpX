@@ -31,34 +31,46 @@
     gap: 20px;
     border-radius: 25px;
     padding: 20px 0px;
-    background: #Ffffff;
+    background: #FCFFF2;
+    box-shadow: 0px 4px 4px 0px #D9D9D9;
   }
 
   .leadDetailsPage .leadDetails1,
-  .leadDetailsPage .leadDetails3,
-  .leadDetailsPage .leadDetails5 {
+  .leadDetailsPage .leadDetails3 {
     border-bottom: 1px solid #07070780;
   }
 
-  .leadDetailsPage .leadDetails1 h2 {
-    font-family: Segoe UI;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 17.6px;
-    letter-spacing: 0px;
-    padding: 10px 20px;
+  .leadDetailsPage .leadDetails1 {
+    display: flex;
+    padding: 10px 10px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
   }
 
-  .leadDetailsPage .leadDetails2 {
+  .leadDetailsPage .leadDetails1 h2 {
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+
+  .leadDetailsPage .leadDetails2,
+  .leadDetailsPage .leadDetails3 {
     border-bottom: 1px solid #07070780;
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
 
-  .leadDetailsPage .leadDetails2 h3 {
-    font-family: Segoe UI;
+  .leadDetailsPage .leadDetails2 h3,
+  .leadDetailsPage .leadDetails3 h3,
+  .leadDetailsPage .leadDetails5 h3 {
+    font-family: Inter, sans-serif;
     font-weight: 600;
+    font-style: Semi Bold;
     font-size: 16px;
     line-height: 17.6px;
     letter-spacing: 0px;
@@ -67,7 +79,7 @@
 
   .leadDetailsPage .leadDetails2A {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     gap: 10px;
     align-items: flex-start;
@@ -76,91 +88,72 @@
 
   .leadDetailsPage .leadDetails2A div {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    justify-content: flex-start;
+    gap: 15px;
     font-family: Inter, sans-serif;
-    font-weight: 400;
-    font-size: 13px;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
     line-height: 100%;
     letter-spacing: 0%;
-  }
-
-  .leadDetailsPage .leadDetails3 h3,
-  .leadDetailsPage .leadDetails5 h3 {
-    font-family: Segoe UI;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 17.6px;
-    letter-spacing: 0px;
-    padding: 0px 20px;
-    margin-bottom: 20px;
   }
 
   .leadDetailsPage .leadDetails4 {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* padding: 20px 20px; */
-    border-bottom: 1px solid #07070780;
   }
 
+  .leadDetailsPage .leadDetails4 div p:first-child,
   .leadDetailsPage .leadDetails4 p:first-of-type {
-    font-family: Segoe UI;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 17.6px;
-    letter-spacing: 0px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
     padding: 0px 20px;
   }
 
   .leadDetailsPage .leadDetails4 div {
-    border: 1px solid #07070780;
+    background: #FFFFFF;
+    border: 1px solid #184E77;
     border-radius: 15px;
     padding: 10px 10px;
     margin: 20px 20px;
   }
 
-  .leadDetailsPage .leadDetails4 div p:first-child {
-    font-family: Inter, sans-serif;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 100%;
-    letter-spacing: 0%;
-  }
-
-  .leadDetailsPage .leadDetails6 {
+  .leadDetailsPage .leadDetails5,
+  .leadDetailsPage .leadDetails5 .leadDetails6 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* align-items: flex-start; */
     gap: 20px;
-    padding: 0px 20px;
-    border-bottom: 1px solid #07070780;
+    padding: 0px 5px;
+    width: 100%;
   }
+
+    .leadDetailsPage .leadDetails5 {
+          border-bottom: 1px solid #07070780;
+    }
 
   .leadDetailsPage .leadDetails6 div {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 25px;
   }
 
   .leadDetailsPage .leadDetails6 div:last-child {
     margin-bottom: 20px;
   }
 
-  .leadDetailsPage .leadDetails6 div p:first-child {
-    font-family: Segoe UI;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 17.6px;
-    letter-spacing: 0px;
-    color: #070707CC;
-  }
-
-  .leadDetailsPage .leadDetails6 div p:last-child {
-    font-family: Segoe UI;
+  .leadDetailsPage .leadDetails6 div p {
+    font-family: Inter, sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-style: Regular;
+    font-size: 14px;
     line-height: 17.6px;
     letter-spacing: 0px;
   }
@@ -175,20 +168,34 @@
   }
 
   .leadDetailsPage .button1 {
-    background-color: #f8f8f6;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #BAEA10;
+  }
+
+  .leadDetailsPage .button1:hover {
+    background-color: #a2ce06;
   }
 
   .leadDetailsPage .button2 {
-    background: #806A6A;
+    background: linear-gradient(90deg, #184E77 0%, #D9ED92 100%);
+  }
+
+    .leadDetailsPage .button2:hover {
+    background: linear-gradient(90deg, #D9ED92 0%, #184E77 100%);
   }
 
   .leadDetailsPage .button3 {
-    background: #768E6A;
+    background: linear-gradient(90deg, #184E77 0%, #2D91DD 100%);
   }
 
   .leadDetailsPage .button4 {
     background: #B30000;
+    color: #Ffffff;
+  }
+
+    .leadDetailsPage .button4:hover {
+    color: #B30000;
+    background: #Ffffff;
+    border: 1px solid #B30000;
   }
 
   .leadDetailsPage .button1,
@@ -202,16 +209,54 @@
     font-size: 16px;
     line-height: 17.6px;
     letter-spacing: 0px;
+        transition: transform 0.3s ease;
+  }
+
+  .leadDetailsPage .button1:active,
+  .leadDetailsPage .button2:active,
+  .leadDetailsPage .button3:active,
+  .leadDetailsPage .button4:active {
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
   }
 }
 
 @media (min-width: 768px) {
-    .leadDetailsPage h1 {
+  .leadDetailsPage h1 {
     font-size: 32px;
   }
 
-    .leadDetailsPage .leadDetails1 h2 {
+    .leadDetailsPage .leadDetails2 h3,
+  .leadDetailsPage .leadDetails3 h3,
+  .leadDetailsPage .leadDetails5 h3 {
     font-size: 20px;
+  }
+
+
+    .leadDetailsPage .leadDetails2A div {
+      width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 16px;
+  }
+
+    .leadDetailsPage .leadDetails4 {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+    .leadDetailsPage .leadDetails4 div {
+      width: 350px;
+    padding: 10px 40px;
+    margin: 20px 0px;
+  }
+
+    .leadDetailsPage .leadDetails4 div p:first-child,
+  .leadDetailsPage .leadDetails4 p:first-of-type,
+    .leadDetailsPage .leadDetails6 div p {
+    font-size: 16px;
   }
 }
 
@@ -220,12 +265,16 @@
     gap: 60px;
   }
 
-  .leadDetailsPage .h1 {
+  .leadDetailsPage h1 {
     font-size: 40px;
   }
 
   .leadDetailsPage .leadDetailsContainer {
-    width: 866px;
+    width: 1006px;
+  }
+
+      .leadDetailsPage .leadDetails4 div {
+      width: 540px;
   }
 
   .leadDetailsPage .leadDetails1,
