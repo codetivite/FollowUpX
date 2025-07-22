@@ -85,6 +85,11 @@
     box-shadow: 0px 2px 10px 0px #0000000D;
     padding: 20px 10px;
   }
+
+  .dashboardSection3 {
+    width: 100%;
+    padding: 10px 10px;
+  }
 }
 
 /* ========== 768px responsiveness ================ */

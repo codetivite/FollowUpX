@@ -6,7 +6,7 @@ import { FiChevronDown } from "react-icons/fi";
 import React from "react";
 import DashboardCalendar from "@components/components/dashboard/DashboardCalendar/DashboardCalendar";
 import RecentActivity from "@components/components/dashboard/RecentActivity/RecentActivity";
-import { useRouter } from "next/navigation";
+
 import styles from "./styles.module.css";
 import UpdateFollowUps from "@components/components/dashboard/UpcomingFollowUps/UpcomingFollowUps";
 import FollowUpPerformanceGraph from "@components/components/dashboard/FollowUpPerformanceGraph/FollowUpPerformanceGraph";

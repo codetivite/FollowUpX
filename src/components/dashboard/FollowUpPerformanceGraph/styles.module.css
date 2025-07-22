@@ -1,34 +1,39 @@
-@media (min-width: 320px) {
-  .chartWrapper {
-    width: 100%;
-    /* max-width: 700px; */
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
-    /* Tailwind gray-200 */
-    border-radius: 0.75rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
+.container {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
-@media (min-width: 425px) {
-  .chartWrapper {
-    width: 400px;
-    padding: 2rem;
-  }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
-@media (min-width: 768px) {
-  .chartWrapper {
-    width: 680px;
-    padding: 2rem;
-  }
+.title {
+  margin: 0;
+  font-size: 1.1rem;
 }
 
-@media (min-width: 1440px) {
-  .chartWrapper {
-    width: 997px;
-    padding: 2rem;
+.filterButton {
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filterButton {
+    margin-top: 0.5rem;
   }
 }

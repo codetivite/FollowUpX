@@ -12,9 +12,9 @@ export default function UpdateFollowUps() {
       <div className={styles.updateContainers}>
         <div className={styles.updateSection1}>
           <h2>Upcoming Follow-ups</h2>
-          <button type="submit" className={styles.newTask}>
+          <Link href={`/dashboard/task`} className={styles.newTask}>
             + <span>New Task</span>
-          </button>
+          </Link>
         </div>
         <div className={styles.updateSection2}>
           <table className={styles.updateTable}>
