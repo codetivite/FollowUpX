@@ -11,7 +11,13 @@ export default function DashboardCalendar() {
   return (
     <div className={styles.calendarWrapper}>
       <Calendar
-        // onChange={setDate}
+        onChange={(value) => {
+          if (value instanceof Date) {
+            setDate(value);
+          } else if (Array.isArray(value) && value[0] instanceof Date) {
+            setDate(value[0]);
+          }
+        }}
         value={date}
       />
     </div>

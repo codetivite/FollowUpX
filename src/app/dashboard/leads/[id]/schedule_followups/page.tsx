@@ -6,6 +6,7 @@ import { mockLeads } from "@components/mock/leads";
 import InputField from "@components/components/Form/InputField";
 import RadioField from "@components/components/Form/RadioField";
 import TextAreaField from "@components/components/Form/TestAreaField";
+import BackArrow from "@components/components/BackArrow/BackArrow";
 
 export default function ScheduleFollowUps({
   params,
@@ -73,6 +74,7 @@ export default function ScheduleFollowUps({
   return (
     <div className={styles.editNewEvent}>
       <div className={styles.editNewEventHeader}>
+        <BackArrow />
         <h1>Schedule Follow-Up for {lead?.name}</h1>
       </div>
 

@@ -5,20 +5,19 @@ import styles from "./styles.module.css";
 import React from "react";
 import Link from "next/link";
 import { mockLeads } from "@components/mock/leads";
-import { notFound } from "next/navigation";
 import AppImage from "@components/components/AppImage/AppImagee";
 
 export default function LeadDetailsPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
-  const { id } = React.use(params);
-  const leadId = parseInt(id, 10);
+  const leadId = parseInt(params.id, 10);
   const lead = mockLeads.find((l) => l.id === leadId);
 
+  // Optional: prevent crash if lead not found
   if (!lead) {
-    notFound();
+    return <div className={styles.leadDetailsPage}>Lead not found</div>;
   }
 
   function handleDelete() {
@@ -36,6 +35,7 @@ export default function LeadDetailsPage({
           <AppImage src="/leadImage.svg" alt="" height={150} width={150} />
           <h2>{lead.name}</h2>
         </div>
+
         <div className={styles.leadDetails2}>
           <h3>Contact Info</h3>
           <div className={styles.leadDetails2A}>
@@ -49,6 +49,7 @@ export default function LeadDetailsPage({
             </div>
           </div>
         </div>
+
         <div className={styles.leadDetails3}>
           <h3>Overview</h3>
           <div className={styles.leadDetails4}>
@@ -58,12 +59,13 @@ export default function LeadDetailsPage({
             </div>
           </div>
         </div>
+
         <div className={styles.leadDetails5}>
           <h3>Interaction History</h3>
           <div className={styles.leadDetails6}>
             <div>
               <p>Initial Enquiry about a product</p>
-              <p> {lead.lastInteraction}</p>
+              <p>{lead.lastInteraction}</p>
             </div>
             <div>
               <p>Automated welcome email</p>
@@ -79,6 +81,7 @@ export default function LeadDetailsPage({
             </div>
           </div>
         </div>
+
         <div className={styles.leadDetails7}>
           <Link
             href={`/dashboard/leads/${lead.id}/edit_lead`}
@@ -92,10 +95,10 @@ export default function LeadDetailsPage({
           >
             Scheduled Follow-Up
           </Link>
-          <Link href="" className={styles.button3}>
+          <Link href="#" className={styles.button3}>
             Mark as Contacted
           </Link>
-          <Link href="" className={styles.button4} onClick={handleDelete}>
+          <Link href="#" className={styles.button4} onClick={handleDelete}>
             Delete Lead
           </Link>
         </div>

@@ -8,11 +8,10 @@ import InputField from "@components/components/Form/InputField";
 import SelectField from "@components/components/Form/SelectField";
 import TextAreaField from "@components/components/Form/TestAreaField";
 import { mockEvents } from "@components/mock/event";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 
 export default function AddEvent() {
   const params = useParams();
-  const router = useRouter();
   const eventId = params?.id; // This will be string
   const event = mockEvents.find((c) => String(c.id) === eventId);
 

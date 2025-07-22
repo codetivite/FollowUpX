@@ -60,14 +60,18 @@ export default function LoginPage() {
       } else {
         showCustomToast("Login failed. Please try again.", "error");
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Login error:", error);
-      const message =
-        error.response?.data?.msg ||
-        error.response?.data?.error ||
-        "An unexpected error occurred";
+      let message = "An unexpected error occurred";
+      if (axios.isAxiosError(error) && error.response) {
+        message =
+          error.response.data?.msg ||
+          error.response.data?.error ||
+          "An unexpected error occurred";
+      } else if (error instanceof Error) {
+        message = error.message;
+      }
       showCustomToast(`Login failed: ${message}`, "error");
-    } finally {
       setIsLoading(false);
     }
   };
@@ -168,7 +172,7 @@ export default function LoginPage() {
               </button>
             </div>
             <p>
-              Don't have an account?{" "}
+              Don&apos;t have an account?
               <Link href="/auth/signUp" className={styles.registerLink}>
                 Sign Up
               </Link>

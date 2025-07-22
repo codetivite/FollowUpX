@@ -21,7 +21,6 @@ export default function AddCampaign() {
   });
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
-  const [selectedLanguage, setSelectedLanguage] = useState("");
 
   function handleChange(
     e: React.ChangeEvent<

@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { mockLeads } from "@components/mock/leads";
 import InputField from "@components/components/Form/InputField";
 import BackArrow from "@components/components/BackArrow/BackArrow";
 import styles from "@components/styles/FormStyles.module.css";
@@ -18,14 +18,25 @@ export default function EditLeads() {
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
-  function handleChange(
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) {
+  useEffect(() => {
+    const leadToEdit = mockLeads[0]; // mock data fallback
+    if (leadToEdit) {
+      setFormData({
+        name: leadToEdit.name || "",
+        email: leadToEdit.email || "",
+        phone: leadToEdit.phone || "",
+        status: leadToEdit.status || "new",
+        creationDate: leadToEdit.lastInteraction || "",
+        note: leadToEdit.followUpSuggestion || "",
+      });
+    }
+  }, []);
+
+  // ✅ FIXED: Added handleChange function
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
+    setFormData((prevData) => ({
+      ...prevData,
       [name]: value,
     }));
   }
@@ -64,13 +75,11 @@ export default function EditLeads() {
   }
 
   return (
-    <>
     <div className={styles.editNewEvent}>
       <div className={styles.editNewEventHeader}>
         <BackArrow />
         <h1>Edit Lead</h1>
       </div>
-
 
       <div className={styles.addEventDetails}>
         <h2>Lead Details</h2>
@@ -131,21 +140,15 @@ export default function EditLeads() {
             />
           </div>
           <div className={styles.EventFormButton}>
-            <button
-              type="button"
-              onClick={handleCancel}
-            >
+            <button type="button" onClick={handleCancel}>
               Cancel
             </button>
-            <button
-              type="submit"
-            >
+            <button type="submit">
               Save Changes
             </button>
           </div>
         </form>
       </div>
     </div>
-    </>
   );
 }

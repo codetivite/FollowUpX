@@ -54,7 +54,10 @@ export default function JoinWaitlistModal({
       );
 
       if (res.data && res.data.success !== false) {
-        showCustomToast(`${firstName} has joined waitlist successfully`, "success");
+        showCustomToast(
+          `${firstName} has joined waitlist successfully`,
+          "success"
+        );
         onClose();
         setFirstName("");
         setEmail("");
@@ -63,11 +66,17 @@ export default function JoinWaitlistModal({
       } else {
         showCustomToast("Something went wrong. Please try again.", "error");
       }
-    } catch (error: any) {
-      console.error(error);
-      showCustomToast(`Submission failed. ${error.message ?? "Check your network or input."}`, "error");
-    } finally {
-      setIsLoading(false);
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        showCustomToast(
+          `Submission failed. ${
+            error.response?.data?.message ?? error.message
+          }`,
+          "error"
+        );
+      } else {
+        showCustomToast("Submission failed. Something went wrong.", "error");
+      }
     }
   };
 

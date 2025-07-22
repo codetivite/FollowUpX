@@ -11,7 +11,7 @@ import axios from "axios";
 import { showCustomToast } from "@components/components/ui/CustomToast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-export default function signUpPage() {
+export default function SignUpPage() {
   const [agree, setAgree] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [email, setEmail] = useState("");
@@ -118,11 +118,14 @@ export default function signUpPage() {
       } else {
         showCustomToast("Signup failed. Please try again.", "error");
       }
-    } catch (error: any) {
-      const msg =
-        error?.response?.data?.error ||
-        error?.response?.data?.details ||
-        "An unexpected error occurred.";
+    } catch (error: unknown) {
+      let msg = "An unexpected error occurred.";
+      if (axios.isAxiosError(error) && error.response) {
+        msg =
+          error.response.data?.error ||
+          error.response.data?.details ||
+          "An unexpected error occurred.";
+      }
       showCustomToast(msg, "error");
     } finally {
       setIsLoading(false);

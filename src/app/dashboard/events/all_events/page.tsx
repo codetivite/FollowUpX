@@ -13,15 +13,6 @@ export default function AllEvent() {
     router.push("/dashboard/events/add_events");
   };
 
-  function handleDelete(id: number): void {
-    // For now, just log the id. In a real app, you'd call an API and update state.
-    console.log(`Delete Event with id: ${id}`);
-    // Example: show a confirmation dialog before deleting
-    // if (window.confirm("Are you sure you want to delete this Event?")) {
-    //   // Call API to delete, then update UI
-    // }
-  }
-
   return (
     <>
       <div className={styles.EventContainer}>
