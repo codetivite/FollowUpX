@@ -25,7 +25,7 @@
   }
 
   .newTask {
-    background: #4F46E5;
+    background: linear-gradient(273.31deg, #B5E48C 0.49%, #184E77 26.19%);
     color: white;
     padding: 0.5rem 1rem;
     border: none;
@@ -37,7 +37,7 @@
   }
 
   .newTask:hover {
-    background-color: #4e46e5c9;
+    background: linear-gradient(273.31deg, #184E77 0.49%, #B5E48C 26.19%);
     transform: scale(1.03);
     transition: transform 0.3s ease;
   }
