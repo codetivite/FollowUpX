@@ -15,7 +15,7 @@ export default function Integrations() {
         <div className={styles.integrationItem}>
           <h3 className={styles.integrationTitle}>Connect Google Calendar</h3>
           <p className={styles.integrationDescription}>
-            Sync your events and schedule followup directly
+            Connect your Google Calendar to sync events and appointments.
           </p>
         </div>
         <button className={styles.connectButton} onClick={() => setIsModalOpen(true)}>Connect</button>

@@ -12,14 +12,14 @@ export default function NotificationPreferences() {
       <div className={styles.preferenceList}>
         <PreferenceItem
           title="Email Notification"
-          description="Receive updates and alerts via Email"
+          description="Receive email notifications for important updates and alerts."
           enabled={emailEnabled}
           onToggle={() => setEmailEnabled(!emailEnabled)}
         />
         <div className={styles.divider} />
         <PreferenceItem
           title="WhatsApp Notification"
-          description="Receive updates and alerts via WhatsApp"
+          description="Receive WhatsApp notifications for urgent messages and reminders."
           enabled={whatsappEnabled}
           onToggle={() => setWhatsappEnabled(!whatsappEnabled)}
         />
