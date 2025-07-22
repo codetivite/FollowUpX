@@ -37,9 +37,21 @@
   padding: 0 8px;
 }
 
+.formGroup1 .formRadio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.radioInput:checked {
+  accent-color: blue;
+}
+
 .formGroup1 {
   margin-bottom: 1rem;
 }
+
 .formInput {
   width: 100%;
   padding: 0.5rem;

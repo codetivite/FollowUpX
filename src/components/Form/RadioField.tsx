@@ -25,7 +25,7 @@ export default function RadioField({
   return (
     <div className={styles.formGroup1}>
       <label>{label}</label>
-      <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+      <div className={styles.formRadio}>
         {options.map((o) => (
           <label key={o.value} style={{ display: "flex", alignItems: "center", gap: "0.25rem" }}>
             <input

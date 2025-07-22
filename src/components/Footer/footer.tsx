@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./styles.module.css";
-import Image from "next/image";
 import Link from "next/link";
 import AppImage from "@components/components/AppImage/AppImagee";
 
@@ -10,10 +9,10 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.footerLinks}>
-          <li><Link href="#features">Features</Link></li>
-          <li><Link href="#pricing">Pricing</Link></li>
+          <li><Link href="/#features">Features</Link></li>
+          <li><Link href="/#pricing">Pricing</Link></li>
           <li><Link href="/integrations">Integration</Link></li>
-          <li><Link href="#about">About</Link></li>
+          <li><Link href="/#about">About</Link></li>
           <li><Link href="">Careers</Link></li>
           <li><Link href="/contact">Contact</Link></li>
           <li><Link href="/privacy">Privacy</Link></li>
