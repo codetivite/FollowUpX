@@ -10,9 +10,11 @@ import AppImage from "@components/components/AppImage/AppImagee";
 export default function LeadDetailsPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const leadId = parseInt(params.id, 10);
+  const resolvedParams = React.use(params); // ✅ Use React.use() on the whole promise
+  const id = resolvedParams.id;
+  const leadId = parseInt(id, 10);
   const lead = mockLeads.find((l) => l.id === leadId);
 
   // Optional: prevent crash if lead not found
