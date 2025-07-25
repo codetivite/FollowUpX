@@ -32,7 +32,7 @@ export default function Home() {
             </p>
             <div className={styles.buttons}>
               <WaitlistButton variant="secondary" isLive={false} onClick={openModal} />
-              <button className={styles.demo}>Request Demo</button>
+              {/* <button className={styles.demo}>Request Demo</button> */}
             </div>
           </div>
           <div className={styles.imageContainer}>

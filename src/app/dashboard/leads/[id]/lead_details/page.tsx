@@ -1,23 +1,19 @@
-// app/leads/[id]/page.tsx
 "use client";
 
 import styles from "./styles.module.css";
 import React from "react";
-import Link from "next/link";
+import { useParams } from "next/navigation";
 import { mockLeads } from "@components/mock/leads";
+import Link from "next/link";
 import AppImage from "@components/components/AppImage/AppImagee";
 
-export default function LeadDetailsPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const resolvedParams = React.use(params); // ✅ Use React.use() on the whole promise
-  const id = resolvedParams.id;
-  const leadId = parseInt(id, 10);
+export default function LeadDetailsPage() {
+  const params = useParams();
+  const id = Array.isArray(params?.id) ? params.id[0] : params?.id;
+  const leadId = parseInt(id ?? "", 10);
+
   const lead = mockLeads.find((l) => l.id === leadId);
 
-  // Optional: prevent crash if lead not found
   if (!lead) {
     return <div className={styles.leadDetailsPage}>Lead not found</div>;
   }

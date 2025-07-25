@@ -4,7 +4,7 @@ import InputField from "@components/components/Form/InputField";
 import TextAreaField from "@components/components/Form/TestAreaField";
 import styles from "@components/styles/FormStyles.module.css";
 
-export default function AddLead() {
+export default function AddNewTask() {
   const [formData, setFormData] = useState({
     name: "",
     description: "",

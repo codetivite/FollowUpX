@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import styles from "./styles.module.css";
 import Logo from "../logo/Logo";
 import WaitlistButton from "../headerButtons/WaitlistButton";
-import LoginButton from "../headerButtons/LoginButton";
+// import LoginButton from "../headerButtons/LoginButton";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -49,7 +49,7 @@ export default function Header({ onJoinClick, variant = "default" }: Props) {
         <>
           <div className={styles.headerButtons}>
             <WaitlistButton onClick={onJoinClick} />
-            <LoginButton />
+            {/* <LoginButton /> */}
           </div>
 
           <button className={styles.menuBtn} onClick={() => setIsOpen(true)}>
@@ -74,7 +74,7 @@ export default function Header({ onJoinClick, variant = "default" }: Props) {
                   <li><Link href="">Demo</Link></li>
                   <li><Link href="/#about">About</Link></li>
                   <li><WaitlistButton onClick={onJoinClick} /></li>
-                  <li><LoginButton /></li>
+                  {/* <li><LoginButton /></li> */}
                 </ul>
               </div>
             </div>
